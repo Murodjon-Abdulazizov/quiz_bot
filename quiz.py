@@ -1,35 +1,27 @@
 import os
+import logging
+import random
+import asyncio
 from dotenv import load_dotenv
-from telegram import Update
-from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
+from telegram import Update, Poll
+from telegram.ext import (
+    ApplicationBuilder, CommandHandler, PollAnswerHandler, ContextTypes
+)
 
+# 1. Yuklamalar
 load_dotenv()
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 
 if not BOT_TOKEN:
-    raise Exception("BOT_TOKEN is missing. Check your .env or environment variables.")
+    raise Exception("BOT_TOKEN is missing. Check your .env file or environment variables.")
 
-
-import os
-from dotenv import load_dotenv
-
-import logging
-import random
-import asyncio
-import os
-from telegram import Update, Poll
-from telegram.ext import (
-    ApplicationBuilder, CommandHandler, PollAnswerHandler,
-    ContextTypes
-)
-
-# 1. Logging (xatoliklar uchun)
+# 2. Logging (xatoliklar uchun)
 logging.basicConfig(level=logging.INFO)
 
-# 2. Foydalanuvchi test holati
+# 3. Foydalanuvchi test holati
 user_data = {}
 
-# 3. TXT fayldan savollarni JSON formatga o‘tkazish
+# 4. TXT fayldan savollarni o‘qish
 def parse_txt_to_json(txt_path):
     questions = []
     with open(txt_path, 'r', encoding='utf-8') as f:
@@ -59,7 +51,7 @@ def parse_txt_to_json(txt_path):
             break
     return questions
 
-# 4. /start komandasi
+# 5. /start komandasi
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.effective_user.id
 
@@ -76,21 +68,22 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_data[user_id] = {
         "index": 0,
         "correct": 0,
-        "questions": all_questions
+        "questions": all_questions,
+        "chat_id": update.effective_chat.id,
     }
-    await send_poll(update, context)
+    await send_poll(user_id, context)
 
-# 5. Poll yuborish
-async def send_poll(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    user_id = update.effective_user.id
+# 6. Poll yuborish
+async def send_poll(user_id, context: ContextTypes.DEFAULT_TYPE):
     state = user_data[user_id]
     index = state["index"]
     questions = state["questions"]
+    chat_id = state["chat_id"]
 
     if index < len(questions):
         q = questions[index]
         poll_msg = await context.bot.send_poll(
-            chat_id=update.effective_chat.id,
+            chat_id=chat_id,
             question=q["question"],
             options=q["options"],
             type=Poll.QUIZ,
@@ -113,7 +106,7 @@ async def send_poll(update: Update, context: ContextTypes.DEFAULT_TYPE):
             mark = 2
 
         await context.bot.send_message(
-            chat_id=update.effective_chat.id,
+            chat_id=chat_id,
             text=(
                 f"✅ Test yakunlandi!\n"
                 f"To‘g‘ri javoblar: {correct}/{total}\n"
@@ -122,7 +115,7 @@ async def send_poll(update: Update, context: ContextTypes.DEFAULT_TYPE):
             )
         )
 
-# 6. Poll javobi kelganda ishlaydi
+# 7. Poll javob kelganda ishlash
 async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE):
     poll_id = update.poll_answer.poll_id
     user_id = context.bot_data.get(poll_id)
@@ -140,20 +133,12 @@ async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE)
             state["correct"] += 1
         state["index"] += 1
 
-        await asyncio.sleep(1.5)  # Delay to let poll close
+        await asyncio.sleep(1.5)
+        await send_poll(user_id, context)
 
-        class DummyUpdate:
-            def __init__(self, uid, cid):
-                self.effective_user = type("User", (), {"id": uid})
-                self.effective_chat = type("Chat", (), {"id": cid})
-        dummy = DummyUpdate(user_id, update.poll_answer.user.id)
-        await send_poll(dummy, context)
-
-# 7. Bot token va ishga tushirish
-BOT_TOKEN = "7853394479:AAEJYVirasfuic3cM6MoRPAHH99LUoB2T2A"
-
-app = ApplicationBuilder().token(BOT_TOKEN).build()
-app.add_handler(CommandHandler("start", start))
-app.add_handler(PollAnswerHandler(handle_poll_answer))
-
-app.run_polling()
+# 8. Botni ishga tushirish
+if __name__ == "__main__":
+    app = ApplicationBuilder().token(BOT_TOKEN).build()
+    app.add_handler(CommandHandler("start", start))
+    app.add_handler(PollAnswerHandler(handle_poll_answer))
+    app.run_polling()
