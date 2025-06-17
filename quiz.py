@@ -1,3 +1,6 @@
+import os
+from dotenv import load_dotenv
+
 import logging
 import random
 import asyncio
