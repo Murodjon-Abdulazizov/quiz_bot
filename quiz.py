@@ -66,7 +66,7 @@ def parse_txt_to_json(txt_path):
 
 # /start komandasi
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    user_id = str(update.effective_user.id)  # ID ni string qilish
+    user_id = str(update.effective_user.id)
     chat_id = update.effective_chat.id
 
     if not os.path.exists("questions.txt"):
@@ -120,7 +120,7 @@ async def send_poll(chat_id, context: ContextTypes.DEFAULT_TYPE, user_id):
                 text=f"✅ Test yakunlandi!\nTo‘g‘ri javoblar: {correct}/{total}\nNatija: {percent}%\nBahoyingiz: {mark}"
             )
             logger.info(f"Foydalanuvchi {user_id} uchun test yakunlandi: {percent}%")
-            del user_data[user_id]  # Foydalanuvchi ma'lumotlarini o'chirish
+            del user_data[user_id]
     except Exception as e:
         logger.error(f"Poll yuborishda xatolik: {e}")
         await context.bot.send_message(chat_id, "❌ Xatolik yuz berdi. Qaytadan urining.")
