@@ -1,13 +1,10 @@
-O'zbekiston poytaxti qaysi?
-A) Toshkent
-B) Samarqand
-C) Buxoro
-D) Xiva
-Javob: A
-
-2 + 2 nechiga teng?
-A) 3
-B) 4
-C) 5
-D) 6
-Javob: B
+1: {
+        "question": "2 + 2 = ?",
+        "answers": ["2", "3", "4", "5"],
+        "correct": "4"
+    },
+    2: {
+        "question": "Python'da ro‘yxatni aralashtirish uchun qaysi funksiya ishlatiladi?",
+        "answers": ["sort()", "shuffle()", "randomize()", "mix()"],
+        "correct": "shuffle()"
+    }
