@@ -169,3 +169,6 @@ if __name__ == "__main__":
     except Exception as e:
         logger.error(f"Botni ishga tushirishda xatolik: {e}")
         raise
+
+
+    
