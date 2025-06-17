@@ -1,45 +1,38 @@
 import os
 import logging
-import random
 import asyncio
+import random
 from dotenv import load_dotenv
 from telegram import Update, Poll
 from telegram.ext import (
-    ApplicationBuilder, CommandHandler, PollAnswerHandler, ContextTypes
+    ApplicationBuilder, CommandHandler, ContextTypes,
+    PollAnswerHandler
 )
 
-# 1. Yuklamalar
+# .env dan token yuklash
 load_dotenv()
 BOT_TOKEN = os.getenv("BOT_TOKEN")
-
 if not BOT_TOKEN:
-    raise Exception("BOT_TOKEN is missing. Check your .env file or environment variables.")
+    raise Exception("BOT_TOKEN topilmadi. .env faylni tekshiring.")
 
-# 2. Logging (xatoliklar uchun)
+# Logging sozlamasi
 logging.basicConfig(level=logging.INFO)
 
-# 3. Foydalanuvchi test holati
+# Foydalanuvchilar holati
 user_data = {}
 
-# 4. TXT fayldan savollarni o‘qish
+# Savollarni o‘qish funksiyasi
 def parse_txt_to_json(txt_path):
     questions = []
     with open(txt_path, 'r', encoding='utf-8') as f:
         lines = [line.strip() for line in f if line.strip()]
-
     i = 0
     while i < len(lines):
         try:
             question = lines[i]
-            options = [
-                lines[i+1][3:],  # A)
-                lines[i+2][3:],  # B)
-                lines[i+3][3:],  # C)
-                lines[i+4][3:]   # D)
-            ]
+            options = [lines[i+1][3:], lines[i+2][3:], lines[i+3][3:], lines[i+4][3:]]
             correct_letter = lines[i+5].split(":")[1].strip().upper()
             correct_index = {'A': 0, 'B': 1, 'C': 2, 'D': 3}[correct_letter]
-
             questions.append({
                 "question": question,
                 "options": options,
@@ -51,12 +44,12 @@ def parse_txt_to_json(txt_path):
             break
     return questions
 
-# 5. /start komandasi
+# /start komandasi
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.effective_user.id
 
     if not os.path.exists("questions.txt"):
-        await update.message.reply_text("❌ questions.txt fayli topilmadi. Faylni bot papkasiga joylashtiring.")
+        await update.message.reply_text("❌ questions.txt topilmadi.")
         return
 
     all_questions = parse_txt_to_json("questions.txt")
@@ -68,17 +61,15 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_data[user_id] = {
         "index": 0,
         "correct": 0,
-        "questions": all_questions,
-        "chat_id": update.effective_chat.id,
+        "questions": all_questions
     }
-    await send_poll(user_id, context)
+    await send_poll(update.effective_chat.id, context, user_id)
 
-# 6. Poll yuborish
-async def send_poll(user_id, context: ContextTypes.DEFAULT_TYPE):
+# Poll yuborish
+async def send_poll(chat_id, context: ContextTypes.DEFAULT_TYPE, user_id):
     state = user_data[user_id]
     index = state["index"]
     questions = state["questions"]
-    chat_id = state["chat_id"]
 
     if index < len(questions):
         q = questions[index]
@@ -96,26 +87,14 @@ async def send_poll(user_id, context: ContextTypes.DEFAULT_TYPE):
         total = len(questions)
         percent = int((correct / total) * 100)
 
-        if percent >= 86:
-            mark = 5
-        elif percent >= 71:
-            mark = 4
-        elif percent >= 50:
-            mark = 3
-        else:
-            mark = 2
+        mark = 5 if percent >= 86 else 4 if percent >= 71 else 3 if percent >= 50 else 2
 
         await context.bot.send_message(
             chat_id=chat_id,
-            text=(
-                f"✅ Test yakunlandi!\n"
-                f"To‘g‘ri javoblar: {correct}/{total}\n"
-                f"Natija: {percent}%\n"
-                f"Bahoyingiz: {mark}"
-            )
+            text=f"✅ Test yakunlandi!\nTo‘g‘ri javoblar: {correct}/{total}\nNatija: {percent}%\nBahoyingiz: {mark}"
         )
 
-# 7. Poll javob kelganda ishlash
+# Poll javobi qabul qilish
 async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE):
     poll_id = update.poll_answer.poll_id
     user_id = context.bot_data.get(poll_id)
@@ -134,9 +113,10 @@ async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE)
         state["index"] += 1
 
         await asyncio.sleep(1.5)
-        await send_poll(user_id, context)
+        chat_id = update.poll_answer.user.id
+        await send_poll(chat_id, context, user_id)
 
-# 8. Botni ishga tushirish
+# Botni ishga tushurish
 if __name__ == "__main__":
     app = ApplicationBuilder().token(BOT_TOKEN).build()
     app.add_handler(CommandHandler("start", start))
