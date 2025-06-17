@@ -46,7 +46,7 @@ def parse_txt_to_json(txt_path):
                     break
                 correct_letter = correct_line[1].strip().upper()
                 if correct_letter not in {'A', 'B', 'C', 'D'}:
-                    logger.error(f"{i+5)-qatorda: Noto‘g‘ri javob harfi ({correct_letter}).")
+                    logger.error(f"{i+5}-qatorda: Noto‘g‘ri javob harfi ({correct_letter}).")
                     break
                 correct_index = {'A': 0, 'B': 1, 'C': 2, 'D': 3}[correct_letter]
                 questions.append({
