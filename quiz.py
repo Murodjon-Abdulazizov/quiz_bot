@@ -1,5 +1,17 @@
 import os
 from dotenv import load_dotenv
+from telegram import Update
+from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
+
+load_dotenv()
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+
+if not BOT_TOKEN:
+    raise Exception("BOT_TOKEN is missing. Check your .env or environment variables.")
+
+
+import os
+from dotenv import load_dotenv
 
 import logging
 import random
