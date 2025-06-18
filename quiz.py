@@ -3,10 +3,10 @@ import logging
 import asyncio
 import random
 from dotenv import load_dotenv
-from telegram import Update, Poll
+from telegram import Update, Poll, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import (
     ApplicationBuilder, CommandHandler, ContextTypes,
-    PollAnswerHandler
+    PollAnswerHandler, CallbackQueryHandler
 )
 
 # Logging sozlamasi
@@ -34,71 +34,68 @@ def parse_txt_to_json(txt_path):
             lines = [line.strip() for line in f if line.strip()]
         i = 0
         while i < len(lines):
-            try:
-                if i + 5 >= len(lines):
-                    logger.error(f"{i}-qatorda: Yetarlicha qator yo‘q.")
-                    break
-
-                question = lines[i]
-                options_raw = [lines[i+1][3:], lines[i+2][3:], lines[i+3][3:], lines[i+4][3:]]
-                correct_line = lines[i+5].split(":")
-                if len(correct_line) < 2:
-                    logger.error(f"{i+5}-qatorda: 'Javob:' topilmadi.")
-                    break
-
-                correct_letter = correct_line[1].strip().upper()
-                if correct_letter not in {'A', 'B', 'C', 'D'}:
-                    logger.error(f"{i+5}-qatorda: Noto‘g‘ri javob harfi ({correct_letter}).")
-                    break
-
-                correct_index_before_shuffle = {'A': 0, 'B': 1, 'C': 2, 'D': 3}[correct_letter]
-
-                # Variantlarni aralashtiramiz
-                option_map = list(enumerate(options_raw))
-                random.shuffle(option_map)
-                shuffled_options = [opt for _, opt in option_map]
-
-                # To‘g‘ri javob qaysi indeksga tushdi?
-                new_correct_index = next(i for i, (orig_idx, _) in enumerate(option_map) if orig_idx == correct_index_before_shuffle)
-
-                questions.append({
-                    "question": question,
-                    "options": shuffled_options,
-                    "correct_option_id": new_correct_index
-                })
-                i += 6
-            except Exception as e:
-                logger.error(f"Xatolik {i}-qatorda: {e}")
+            if i + 5 >= len(lines):
                 break
-    except FileNotFoundError:
-        logger.error(f"Fayl {txt_path} topilmadi.")
+            question = lines[i]
+            options_raw = [lines[i+1][3:], lines[i+2][3:], lines[i+3][3:], lines[i+4][3:]]
+            correct_line = lines[i+5].split(":")
+            if len(correct_line) < 2:
+                break
+            correct_letter = correct_line[1].strip().upper()
+            if correct_letter not in {'A', 'B', 'C', 'D'}:
+                break
+            correct_index_before_shuffle = {'A': 0, 'B': 1, 'C': 2, 'D': 3}[correct_letter]
+
+            option_map = list(enumerate(options_raw))
+            random.shuffle(option_map)
+            shuffled_options = [opt for _, opt in option_map]
+            new_correct_index = next(i for i, (orig_idx, _) in enumerate(option_map) if orig_idx == correct_index_before_shuffle)
+
+            questions.append({
+                "question": question,
+                "options": shuffled_options,
+                "correct_option_id": new_correct_index
+            })
+            i += 6
     except Exception as e:
-        logger.error(f"Faylni o‘qishda xatolik: {e}")
+        logger.error(f"Xatolik: {e}")
     return questions
 
-# /start komandasi
+# /start komandasi — tugmalar bilan
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    user_id = str(update.effective_user.id)
-    chat_id = update.effective_chat.id
+    keyboard = [
+        [InlineKeyboardButton("10 ta savol", callback_data='10')],
+        [InlineKeyboardButton("20 ta savol", callback_data='20')],
+        [InlineKeyboardButton("30 ta savol", callback_data='30')]
+    ]
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    await update.message.reply_text("📋 Nechta savol ishlamoqchisiz?", reply_markup=reply_markup)
+
+# Callback — foydalanuvchi tugmani bosganda
+async def handle_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    user_id = str(query.from_user.id)
+    chat_id = query.message.chat_id
+    count = int(query.data)
 
     if not os.path.exists("questions.txt"):
         logger.error("questions.txt fayli topilmadi.")
-        await update.message.reply_text("❌ questions.txt topilmadi.")
+        await query.message.reply_text("❌ questions.txt topilmadi.")
         return
 
     all_questions = parse_txt_to_json("questions.txt")
     if not all_questions:
-        logger.error("Fayl bo‘sh yoki noto‘g‘ri formatda.")
-        await update.message.reply_text("❗ Fayl bo‘sh yoki noto‘g‘ri formatda.")
+        await query.message.reply_text("❗ Fayl bo‘sh yoki noto‘g‘ri formatda.")
         return
 
-    random.shuffle(all_questions)
+    selected_questions = random.sample(all_questions, min(count, len(all_questions)))
     user_data[user_id] = {
         "index": 0,
         "correct": 0,
-        "questions": all_questions
+        "questions": selected_questions
     }
-    logger.info(f"Foydalanuvchi {user_id} uchun quiz boshlandi.")
+    await query.message.reply_text(f"✅ {len(selected_questions)} ta savol boshlangan!")
     await send_poll(chat_id, context, user_id)
 
 # Poll yuborish
@@ -119,7 +116,6 @@ async def send_poll(chat_id, context: ContextTypes.DEFAULT_TYPE, user_id):
                 is_anonymous=False
             )
             context.bot_data[poll_msg.poll.id] = user_id
-            logger.info(f"Poll {poll_msg.poll.id} yuborildi: {q['question']}")
         else:
             correct = state["correct"]
             total = len(questions)
@@ -128,13 +124,12 @@ async def send_poll(chat_id, context: ContextTypes.DEFAULT_TYPE, user_id):
 
             await context.bot.send_message(
                 chat_id=chat_id,
-                text=f"✅ Test yakunlandi!\nTo‘g‘ri javoblar: {correct}/{total}\nNatija: {percent}%\nBahoyingiz: {mark}"
+                text=f"📊 Test yakunlandi!\n✅ To‘g‘ri javoblar: {correct}/{total}\n📈 Foiz: {percent}%\n📌 Baho: {mark}"
             )
-            logger.info(f"Foydalanuvchi {user_id} uchun test yakunlandi: {percent}%")
             del user_data[user_id]
     except Exception as e:
         logger.error(f"Poll yuborishda xatolik: {e}")
-        await context.bot.send_message(chat_id, "❌ Xatolik yuz berdi. Qaytadan urining.")
+        await context.bot.send_message(chat_id, "❌ Xatolik yuz berdi. Qaytadan urinib ko‘ring.")
 
 # Poll javobi qabul qilish
 async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -142,7 +137,6 @@ async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE)
         poll_id = update.poll_answer.poll_id
         user_id = context.bot_data.get(poll_id)
         if user_id is None or user_id not in user_data:
-            logger.warning(f"Poll {poll_id} uchun foydalanuvchi topilmadi.")
             return
 
         state = user_data[user_id]
@@ -155,7 +149,6 @@ async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE)
                 state["correct"] += 1
             state["index"] += 1
 
-            logger.info(f"Foydalanuvchi {user_id} {index}-savolga javob berdi. To‘g‘ri javoblar: {state['correct']}")
             await asyncio.sleep(1.0)
             chat_id = update.poll_answer.user.id
             await send_poll(chat_id, context, user_id)
@@ -167,11 +160,12 @@ if __name__ == "__main__":
     try:
         app = ApplicationBuilder().token(BOT_TOKEN).build()
         app.add_handler(CommandHandler("start", start))
+        app.add_handler(CallbackQueryHandler(handle_selection))
         app.add_handler(PollAnswerHandler(handle_poll_answer))
         logger.info("Bot ishga tushmoqda...")
 
         port = int(os.getenv("PORT", 8443))
-        webhook_url = os.getenv("WEBHOOK_URL", "https://your-bot-url.com/webhook")  # o‘zingizning webhook url’ingizni yozing
+        webhook_url = os.getenv("WEBHOOK_URL", "https://your-bot-url.com/webhook")  # <- o‘zgartiring
 
         app.run_webhook(
             listen="0.0.0.0",
