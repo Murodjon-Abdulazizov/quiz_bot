@@ -16,17 +16,15 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# .env dan token yuklash
 load_dotenv()
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 if not BOT_TOKEN:
-    logger.error("BOT_TOKEN topilmadi. .env faylini tekshiring.")
-    raise RuntimeError("BOT_TOKEN topilmadi.")
+    raise RuntimeError("BOT_TOKEN topilmadi. .env faylini tekshiring.")
 
-# Foydalanuvchilar holati
 user_data = {}
+poll_timeout_tasks = {}
 
-# Savollarni o‘qish funksiyasi (random variant va to‘g‘ri javob)
+# Savollarni o‘qish funksiyasi
 def parse_txt_to_json(txt_path):
     questions = []
     try:
@@ -48,7 +46,7 @@ def parse_txt_to_json(txt_path):
 
             option_map = list(enumerate(options_raw))
             random.shuffle(option_map)
-            shuffled_options = [opt for _, opt in option_map]
+            shuffled_options = [opt[:100] for _, opt in option_map]  # 100 ta belgidan oshmasin
             new_correct_index = next(i for i, (orig_idx, _) in enumerate(option_map) if orig_idx == correct_index_before_shuffle)
 
             questions.append({
@@ -61,17 +59,17 @@ def parse_txt_to_json(txt_path):
         logger.error(f"Xatolik: {e}")
     return questions
 
-# /start komandasi — tugmalar bilan
+# /start tugmalari
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = [
         [InlineKeyboardButton("10 ta savol", callback_data='10')],
         [InlineKeyboardButton("20 ta savol", callback_data='20')],
         [InlineKeyboardButton("30 ta savol", callback_data='30')]
     ]
-    reply_markup = InlineKeyboardMarkup(keyboard)
-    await update.message.reply_text("📋 Nechta savol ishlamoqchisiz?", reply_markup=reply_markup)
+    markup = InlineKeyboardMarkup(keyboard)
+    await update.message.reply_text("📋 Nechta savol ishlamoqchisiz?", reply_markup=markup)
 
-# Callback — foydalanuvchi tugmani bosganda
+# Tugmani bosganda savollarni yuklash
 async def handle_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
@@ -80,7 +78,6 @@ async def handle_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
     count = int(query.data)
 
     if not os.path.exists("questions.txt"):
-        logger.error("questions.txt fayli topilmadi.")
         await query.message.reply_text("❌ questions.txt topilmadi.")
         return
 
@@ -95,65 +92,73 @@ async def handle_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "correct": 0,
         "questions": selected_questions
     }
-    await query.message.reply_text(f"✅ {len(selected_questions)} ta savol boshlangan!")
+    await query.message.reply_text(f"✅ {len(selected_questions)} ta savol boshlangan! Har bir savol uchun 45 soniya vaqt bor.")
     await send_poll(chat_id, context, user_id)
 
-# Poll yuborish
+# Poll yuborish va 45 soniya kutish
 async def send_poll(chat_id, context: ContextTypes.DEFAULT_TYPE, user_id):
-    try:
-        state = user_data[user_id]
-        index = state["index"]
-        questions = state["questions"]
+    state = user_data[user_id]
+    index = state["index"]
+    questions = state["questions"]
 
-        if index < len(questions):
-            q = questions[index]
-            poll_msg = await context.bot.send_poll(
-                chat_id=chat_id,
-                question=q["question"],
-                options=q["options"],
-                type=Poll.QUIZ,
-                correct_option_id=q["correct_option_id"],
-                is_anonymous=False
-            )
-            context.bot_data[poll_msg.poll.id] = user_id
-        else:
-            correct = state["correct"]
-            total = len(questions)
-            percent = int((correct / total) * 100)
-            mark = 5 if percent >= 86 else 4 if percent >= 71 else 3 if percent >= 50 else 2
+    if index < len(questions):
+        q = questions[index]
+        poll_msg = await context.bot.send_poll(
+            chat_id=chat_id,
+            question=q["question"],
+            options=q["options"],
+            type=Poll.QUIZ,
+            correct_option_id=q["correct_option_id"],
+            is_anonymous=False
+        )
+        context.bot_data[poll_msg.poll.id] = user_id
 
-            await context.bot.send_message(
-                chat_id=chat_id,
-                text=f"📊 Test yakunlandi!\n✅ To‘g‘ri javoblar: {correct}/{total}\n📈 Foiz: {percent}%\n📌 Baho: {mark}"
-            )
-            del user_data[user_id]
-    except Exception as e:
-        logger.error(f"Poll yuborishda xatolik: {e}")
-        await context.bot.send_message(chat_id, "❌ Xatolik yuz berdi. Qaytadan urinib ko‘ring.")
+        # 45 soniyalik timeout
+        task = asyncio.create_task(timeout_next_poll(chat_id, context, user_id, poll_msg.poll.id))
+        poll_timeout_tasks[poll_msg.poll.id] = task
+    else:
+        correct = state["correct"]
+        total = len(questions)
+        percent = int((correct / total) * 100)
+        mark = 5 if percent >= 86 else 4 if percent >= 71 else 3 if percent >= 50 else 2
 
-# Poll javobi qabul qilish
+        await context.bot.send_message(
+            chat_id=chat_id,
+            text=f"📊 Test yakunlandi!\n✅ To‘g‘ri javoblar: {correct}/{total}\n📈 Foiz: {percent}%\n📌 Baho: {mark}"
+        )
+        del user_data[user_id]
+
+# 45 soniyadan so‘ng avtomatik keyingi savol
+async def timeout_next_poll(chat_id, context, user_id, poll_id):
+    await asyncio.sleep(45)
+    if user_id in user_data:
+        user_data[user_id]["index"] += 1
+        await send_poll(chat_id, context, user_id)
+
+# Poll javobini qayta ishlash
 async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    try:
-        poll_id = update.poll_answer.poll_id
-        user_id = context.bot_data.get(poll_id)
-        if user_id is None or user_id not in user_data:
-            return
+    poll_id = update.poll_answer.poll_id
+    user_id = context.bot_data.get(poll_id)
+    if user_id is None or user_id not in user_data:
+        return
 
-        state = user_data[user_id]
-        index = state["index"]
-        questions = state["questions"]
+    # 45 soniyalik timeoutni bekor qilish
+    task = poll_timeout_tasks.pop(poll_id, None)
+    if task:
+        task.cancel()
 
-        if index < len(questions):
-            correct_id = questions[index]["correct_option_id"]
-            if update.poll_answer.option_ids and update.poll_answer.option_ids[0] == correct_id:
-                state["correct"] += 1
-            state["index"] += 1
+    state = user_data[user_id]
+    index = state["index"]
+    questions = state["questions"]
 
-            await asyncio.sleep(1.0)
-            chat_id = update.poll_answer.user.id
-            await send_poll(chat_id, context, user_id)
-    except Exception as e:
-        logger.error(f"Poll javobini qayta ishlashda xatolik: {e}")
+    if index < len(questions):
+        correct_id = questions[index]["correct_option_id"]
+        if update.poll_answer.option_ids and update.poll_answer.option_ids[0] == correct_id:
+            state["correct"] += 1
+        state["index"] += 1
+        await asyncio.sleep(1.0)
+        chat_id = update.poll_answer.user.id
+        await send_poll(chat_id, context, user_id)
 
 # Botni ishga tushurish
 if __name__ == "__main__":
@@ -165,7 +170,7 @@ if __name__ == "__main__":
         logger.info("Bot ishga tushmoqda...")
 
         port = int(os.getenv("PORT", 8443))
-        webhook_url = os.getenv("WEBHOOK_URL", "https://your-bot-url.com/webhook")  # <- o‘zgartiring
+        webhook_url = os.getenv("WEBHOOK_URL", "https://your-bot-url.com/webhook")  # o'zgartiring
 
         app.run_webhook(
             listen="0.0.0.0",
