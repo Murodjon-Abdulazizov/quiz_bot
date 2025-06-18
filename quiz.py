@@ -26,7 +26,7 @@ if not BOT_TOKEN:
 # Foydalanuvchilar holati
 user_data = {}
 
-# Savollarni o‘qish funksiyasi
+# Savollarni o‘qish funksiyasi (random variant va to‘g‘ri javob)
 def parse_txt_to_json(txt_path):
     questions = []
     try:
@@ -38,21 +38,33 @@ def parse_txt_to_json(txt_path):
                 if i + 5 >= len(lines):
                     logger.error(f"{i}-qatorda: Yetarlicha qator yo‘q.")
                     break
+
                 question = lines[i]
-                options = [lines[i+1][3:], lines[i+2][3:], lines[i+3][3:], lines[i+4][3:]]
+                options_raw = [lines[i+1][3:], lines[i+2][3:], lines[i+3][3:], lines[i+4][3:]]
                 correct_line = lines[i+5].split(":")
                 if len(correct_line) < 2:
-                    logger.error(f"{i+5}-qatorda: 'Correct Answer' formati noto‘g‘ri.")
+                    logger.error(f"{i+5}-qatorda: 'Javob:' topilmadi.")
                     break
+
                 correct_letter = correct_line[1].strip().upper()
                 if correct_letter not in {'A', 'B', 'C', 'D'}:
                     logger.error(f"{i+5}-qatorda: Noto‘g‘ri javob harfi ({correct_letter}).")
                     break
-                correct_index = {'A': 0, 'B': 1, 'C': 2, 'D': 3}[correct_letter]
+
+                correct_index_before_shuffle = {'A': 0, 'B': 1, 'C': 2, 'D': 3}[correct_letter]
+
+                # Variantlarni aralashtiramiz
+                option_map = list(enumerate(options_raw))
+                random.shuffle(option_map)
+                shuffled_options = [opt for _, opt in option_map]
+
+                # To‘g‘ri javob qaysi indeksga tushdi?
+                new_correct_index = next(i for i, (orig_idx, _) in enumerate(option_map) if orig_idx == correct_index_before_shuffle)
+
                 questions.append({
                     "question": question,
-                    "options": options,
-                    "correct_option_id": correct_index
+                    "options": shuffled_options,
+                    "correct_option_id": new_correct_index
                 })
                 i += 6
             except Exception as e:
@@ -112,7 +124,6 @@ async def send_poll(chat_id, context: ContextTypes.DEFAULT_TYPE, user_id):
             correct = state["correct"]
             total = len(questions)
             percent = int((correct / total) * 100)
-
             mark = 5 if percent >= 86 else 4 if percent >= 71 else 3 if percent >= 50 else 2
 
             await context.bot.send_message(
@@ -158,8 +169,10 @@ if __name__ == "__main__":
         app.add_handler(CommandHandler("start", start))
         app.add_handler(PollAnswerHandler(handle_poll_answer))
         logger.info("Bot ishga tushmoqda...")
+
         port = int(os.getenv("PORT", 8443))
-        webhook_url = os.getenv("WEBHOOK_URL", "https://quiz-bot-n4v3.onrender.com/webhook")
+        webhook_url = os.getenv("WEBHOOK_URL", "https://your-bot-url.com/webhook")  # o‘zingizning webhook url’ingizni yozing
+
         app.run_webhook(
             listen="0.0.0.0",
             port=port,
@@ -169,6 +182,3 @@ if __name__ == "__main__":
     except Exception as e:
         logger.error(f"Botni ishga tushirishda xatolik: {e}")
         raise
-
-
-    
