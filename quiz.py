@@ -9,14 +9,14 @@ from telegram.ext import (
     PollAnswerHandler, CallbackQueryHandler
 )
 
-# Logging sozlamalari
+# Logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger(__name__)
 
-# .env fayldan token olish
+# Token
 load_dotenv()
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 if not BOT_TOKEN:
@@ -25,7 +25,7 @@ if not BOT_TOKEN:
 user_data = {}
 poll_timeout_tasks = {}
 
-# 1. Savollarni o‘qish va formatlash
+# 1. Savollarni yuklash
 def parse_txt_to_json(txt_path):
     questions = []
     try:
@@ -58,11 +58,11 @@ def parse_txt_to_json(txt_path):
         logger.error(f"Xatolik: {e}")
     return questions
 
-# 2. /start — test tugmalarini ko‘rsatish
+# 2. /start — 30/40/50 tanlovini ko‘rsatish
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await show_test_options(update.effective_chat.id, context)
 
-# 3. Test boshlash yoki restart tanlash
+# 3. Tugma bosilganda
 async def handle_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
@@ -89,12 +89,12 @@ async def handle_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await query.message.reply_text(f"✅ {len(selected_questions)} ta savol boshlangan! Har bir savol uchun 45 soniya vaqt bor.")
     await send_poll(chat_id, context, user_id)
 
-# 4. 10/20/30 tanlash tugmalarini yuborish
+# 4. Tanlash tugmalari — 30/40/50
 async def show_test_options(chat_id, context):
     keyboard = [
-        [InlineKeyboardButton("10 ta savol", callback_data='10')],
-        [InlineKeyboardButton("20 ta savol", callback_data='20')],
-        [InlineKeyboardButton("30 ta savol", callback_data='30')]
+        [InlineKeyboardButton("30 ta savol", callback_data='30')],
+        [InlineKeyboardButton("40 ta savol", callback_data='40')],
+        [InlineKeyboardButton("50 ta savol", callback_data='50')]
     ]
     markup = InlineKeyboardMarkup(keyboard)
     await context.bot.send_message(chat_id, "📋 Nechta savol ishlamoqchisiz?", reply_markup=markup)
@@ -132,7 +132,7 @@ async def send_poll(chat_id, context: ContextTypes.DEFAULT_TYPE, user_id):
         )
         del user_data[user_id]
 
-# 6. 45 soniyalik timeout + ogohlantirish
+# 6. 45 soniya ichida javob bo‘lmasa
 async def timeout_next_poll(chat_id, context, user_id, poll_id):
     await asyncio.sleep(45)
     if user_id in user_data:
@@ -146,7 +146,7 @@ async def timeout_next_poll(chat_id, context, user_id, poll_id):
             await asyncio.sleep(1)
             await send_poll(chat_id, context, user_id)
 
-# 7. Javobni qabul qilish va keyingi savol
+# 7. Pollga javob kelsa
 async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE):
     poll_id = update.poll_answer.poll_id
     user_id = context.bot_data.get(poll_id)
@@ -177,7 +177,7 @@ if __name__ == "__main__":
         logger.info("Bot ishga tushmoqda...")
 
         port = int(os.getenv("PORT", 8443))
-        webhook_url = os.getenv("WEBHOOK_URL", "https://your-bot-url.com/webhook")  # o‘zgartiring
+        webhook_url = os.getenv("WEBHOOK_URL", "https://your-bot-url.com/webhook")  # ← O'zingizning webhook URL’ingiz
 
         app.run_webhook(
             listen="0.0.0.0",

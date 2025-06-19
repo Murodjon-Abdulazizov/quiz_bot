@@ -1,0 +1,889 @@
+1. ‘Find and Replace’ qayerda joylashgan?
+A) Bu boshqa funksiya orqali bajariladi
+B) Sozlama menyusi orqali bajariladi
+C) “Home” menyusi ichida, yoki Ctrl + H yordamida chaqiriladi.
+D) Qo‘shimcha parametr orqali bajariladi
+Javob: C
+
+2. ‘Mail Merge’ funksiyasi qaysi vazifani bajaradi?
+A) Bu boshqa funksiya orqali bajariladi
+B) Bir xil hujjatga har xil ma’lumotlarni joylab, ommaviy yuborish imkonini beradi.
+C) Noto‘g‘ri tanlov orqali bajariladi
+D) Qo‘shimcha parametr orqali bajariladi
+Javob: B
+
+3. ‘Page Layout’ menyusi nima uchun kerak?
+A) Sozlama menyusi orqali bajariladi
+B) Sahifa formatini (chekka, o’lcham, orientatsiya, ustunlar) sozlash uchun.
+C) Bu boshqa funksiya orqali bajariladi
+D) Noto‘g‘ri tanlov orqali bajariladi
+Javob: B
+
+4. Animatsiya nima uchun kerak?
+A) Slayddagi elementlarga harakat berib, kontentni jonlantirish uchun.
+B) Noto‘g‘ri tanlov orqali bajariladi
+C) Bu boshqa funksiya orqali bajariladi
+D) Qo‘shimcha parametr orqali bajariladi
+Javob: A
+
+5. Autosum tugmasi nima uchun kerak?
+A) Noto‘g‘ri tanlov orqali bajariladi
+B) Qo‘shimcha parametr orqali bajariladi
+C) Excel’da tez yig‘indi (SUM) funksiyasini ishlatish uchun.
+D) Bu boshqa funksiya orqali bajariladi
+Javob: C
+
+6. BIOS ning to‘liq nomi nima?
+A) Sozlama menyusi orqali bajariladi
+B) Bu boshqa funksiya orqali bajariladi
+C) Noto‘g‘ri tanlov orqali bajariladi
+D) Basic Input/Output System.
+Javob: D
+
+7. BIOS qanday tizimga tegishli?
+A) Sozlama menyusi orqali bajariladi
+B) Bu boshqa funksiya orqali bajariladi
+C) Qo‘shimcha parametr orqali bajariladi
+D) Kompyuterning firmware (past darajali dasturiy ta’minoti) qismiga.
+Javob: D
+
+8. Bulutli texnologiyalar nima imkoniyat beradi?
+A) Noto‘g‘ri tanlov orqali bajariladi
+B) Qo‘shimcha parametr orqali bajariladi
+C) Internet orqali saqlash, ishlash va ilovalardan foydalanish imkonini yaratadi.
+D) Bu boshqa funksiya orqali bajariladi
+Javob: C
+
+9. Bulutli texnologiyalarda faylni saqlash uchun qaysi xizmat ishlatiladi?
+A) Bu boshqa funksiya orqali bajariladi
+B) Google Drive, Dropbox, OneDrive kabilar.
+C) Qo‘shimcha parametr orqali bajariladi
+D) Sozlama menyusi orqali bajariladi
+Javob: B
+
+10. Chipset kompyuterda nima vazifani bajaradi?
+A) Sozlama menyusi orqali bajariladi
+B) Noto‘g‘ri tanlov orqali bajariladi
+C) Ona plata ichida komponentlar o‘rtasidagi ma’lumot almashinuvini boshqaradi.
+D) Qo‘shimcha parametr orqali bajariladi
+Javob: C
+
+11. Cloud backup tizimi qanday ishlaydi?
+A) Fayllarni avtomatik tarzda masofaviy serverga yuklaydi va zaxira qiladi.
+B) Noto‘g‘ri tanlov orqali bajariladi
+C) Qo‘shimcha parametr orqali bajariladi
+D) Sozlama menyusi orqali bajariladi
+Javob: A
+
+12. Cloud Computing qanday asosiy afzallikni beradi?
+A) Resurslarni osongina kengaytirish, xarajatni kamaytirish va samaradorlikni oshirish.
+B) Sozlama menyusi orqali bajariladi
+C) Bu boshqa funksiya orqali bajariladi
+D) Noto‘g‘ri tanlov orqali bajariladi
+Javob: A
+
+13. Cloud texnologiyada 'scalability' nimani anglatadi?
+A) Resurslarni (CPU, RAM, disk) dinamik ravishda oshirish yoki kamaytirishni.
+B) Noto‘g‘ri tanlov orqali bajariladi
+C) Bu boshqa funksiya orqali bajariladi
+D) Qo‘shimcha parametr orqali bajariladi
+Javob: A
+
+14. CMOS batareya kompyuterning qaysi komponentini saqlab turadi?
+A) Sozlama menyusi orqali bajariladi
+B) Bu boshqa funksiya orqali bajariladi
+C) Noto‘g‘ri tanlov orqali bajariladi
+D) BIOS sozlamalari va tizim soatini.
+Javob: D
+
+15. Conditional Formatting qanday vazifani bajaradi?
+A) Ma’lumotga shart asosida rang, shrift va fon formatini belgilash.
+B) Bu boshqa funksiya orqali bajariladi
+C) Sozlama menyusi orqali bajariladi
+D) Qo‘shimcha parametr orqali bajariladi
+Javob: A
+
+16. Ctrl + B tugmalari nima vazifani bajaradi?
+A) Qo‘shimcha parametr orqali bajariladi
+B) Matnni qalin (bold) qiladi.
+C) Bu boshqa funksiya orqali bajariladi
+D) Noto‘g‘ri tanlov orqali bajariladi
+Javob: B
+
+17. Ctrl + C va Ctrl + V nima vazifani bajaradi?
+A) Noto‘g‘ri tanlov orqali bajariladi
+B) Ma’lumotni nusxalash (copy) va joylashtirish (paste).
+C) Bu boshqa funksiya orqali bajariladi
+D) Qo‘shimcha parametr orqali bajariladi
+Javob: B
+
+18. Ctrl + S tugmalari nima uchun ishlatiladi?
+A) Noto‘g‘ri tanlov orqali bajariladi
+B) Hujjatni saqlash uchun.
+C) Bu boshqa funksiya orqali bajariladi
+D) Sozlama menyusi orqali bajariladi
+Javob: B
+
+19. Ctrl + Z qanday vazifa bajaradi?
+A) Qo‘shimcha parametr orqali bajariladi
+B) Noto‘g‘ri tanlov orqali bajariladi
+C) Bu boshqa funksiya orqali bajariladi
+D) Oxirgi amalni bekor qilish (undo).
+Javob: D
+
+20. Data Validation nima vazifani bajaradi?
+A) Sozlama menyusi orqali bajariladi
+B) Noto‘g‘ri tanlov orqali bajariladi
+C) Qo‘shimcha parametr orqali bajariladi
+D) Ma’lumot kiritishda formalar va qiymatlarni cheklash uchun.
+Javob: D
+
+21. Direct Memory Access (DMA) kontrolleri nima vazifani bajaradi?
+A) CPU’siz I/O qurilmalar bilan xotara orasida to‘g‘ridan-to‘g‘ri ma’lumot uzatadi.
+B) Sozlama menyusi orqali bajariladi
+C) Bu boshqa funksiya orqali bajariladi
+D) Noto‘g‘ri tanlov orqali bajariladi
+Javob: A
+
+22. Dropbox qanday xizmat?
+A) Sozlama menyusi orqali bajariladi
+B) Bulutli saqlash va fayl sinxronizatsiyasi xizmati.
+C) Noto‘g‘ri tanlov orqali bajariladi
+D) Bu boshqa funksiya orqali bajariladi
+Javob: B
+
+23. ECC (ErrorCorrecting Code) xotiraning asosiy vazifasi nima?
+A) Bu boshqa funksiya orqali bajariladi
+B) Qo‘shimcha parametr orqali bajariladi
+C) Xotira xatolarini aniqlash va tuzatish orqali ishonchlilikni oshiradi.
+D) Sozlama menyusi orqali bajariladi
+Javob: C
+
+24. Elektron pochta (email) nima uchun kerak?
+A) Bu boshqa funksiya orqali bajariladi
+B) Internet orqali yozma xabarlar, hujjat, fayllarni yuborish va qabul qilish uchun.
+C) Noto‘g‘ri tanlov orqali bajariladi
+D) Qo‘shimcha parametr orqali bajariladi
+Javob: B
+
+25. Excel dasturi asosan nima uchun ishlatiladi?
+A) Bu boshqa funksiya orqali bajariladi
+B) Jadval ko‘rinishda ma’lumotni tahlil qilish va hisob-kitoblar uchun.
+C) Sozlama menyusi orqali bajariladi
+D) Noto‘g‘ri tanlov orqali bajariladi
+Javob: B
+
+26. Excel dasturining asosiy vazifasi:
+A) Noto‘g‘ri tanlov orqali bajariladi
+B) Elektron jadvallar orqali hisobotlar, grafiklar, tahlillar yaratish.
+C) Qo‘shimcha parametr orqali bajariladi
+D) Bu boshqa funksiya orqali bajariladi
+Javob: B
+
+27. Excel fayllarining kengaytmasi nima?
+A) .xlsx
+B) Noto‘g‘ri tanlov orqali bajariladi
+C) Bu boshqa funksiya orqali bajariladi
+D) Sozlama menyusi orqali bajariladi
+Javob: A
+
+28. Excelda formulalarni boshlash uchun nima yoziladi?
+A) Ekval (=) belgisi.
+B) Noto‘g‘ri tanlov orqali bajariladi
+C) Bu boshqa funksiya orqali bajariladi
+D) Qo‘shimcha parametr orqali bajariladi
+Javob: A
+
+29. Excelda formulani kiritish qanday belgidan boshlanadi?
+A) Sozlama menyusi orqali bajariladi
+B) Noto‘g‘ri tanlov orqali bajariladi
+C) Qo‘shimcha parametr orqali bajariladi
+D) = belgisi.
+Javob: D
+
+30. Excelda jadvalni qanday saqlash mumkin?
+A) Sozlama menyusi orqali bajariladi
+B) Noto‘g‘ri tanlov orqali bajariladi
+C) Bu boshqa funksiya orqali bajariladi
+D) Ctrl + S yoki Fayl → Saqlash menyusi orqali.
+Javob: D
+
+31. Excelda katak deb nimaga aytiladi?
+A) Excel jadvalidagi bitta maydon (cell).
+B) Qo‘shimcha parametr orqali bajariladi
+C) Bu boshqa funksiya orqali bajariladi
+D) Noto‘g‘ri tanlov orqali bajariladi
+Javob: A
+
+32. Excelda katakdagi ma’lumotni nusxalash uchun qaysi tugmalar ishlatiladi?
+A) Noto‘g‘ri tanlov orqali bajariladi
+B) Qo‘shimcha parametr orqali bajariladi
+C) Ctrl + C va Ctrl + V
+D) Bu boshqa funksiya orqali bajariladi
+Javob: C
+
+33. Excelda ma’lumotlarni filtrlash qayerda amalga oshiriladi?
+A) Noto‘g‘ri tanlov orqali bajariladi
+B) Qo‘shimcha parametr orqali bajariladi
+C) Bu boshqa funksiya orqali bajariladi
+D) “Data” menyusidagi Filter opsiyasida.
+Javob: D
+
+34. Excelda makroslar (Macros) nima uchun kerak?
+A) Bu boshqa funksiya orqali bajariladi
+B) Takrorlanuvchi vazifalarni avtomatlashtirish uchun.
+C) Noto‘g‘ri tanlov orqali bajariladi
+D) Qo‘shimcha parametr orqali bajariladi
+Javob: B
+
+35. Excelda 'Sheet' nima?
+A) Qo‘shimcha parametr orqali bajariladi
+B) Bu boshqa funksiya orqali bajariladi
+C) Noto‘g‘ri tanlov orqali bajariladi
+D) Excel hujjatidagi alohida varaqlar (tabs).
+Javob: D
+
+36. Excelda ustun yoki qatorni yashirish qayerdan amalga oshiriladi?
+A) Bu boshqa funksiya orqali bajariladi
+B) Ustun nomi yoki qator raqamiga o‘ng tugma bosib, “Hide” ni tanlash.
+C) Sozlama menyusi orqali bajariladi
+D) Qo‘shimcha parametr orqali bajariladi
+Javob: B
+
+37. Excelda ustunlar qanday belgilanadi?
+A) Qo‘shimcha parametr orqali bajariladi
+B) A, B, C … formatda.
+C) Noto‘g‘ri tanlov orqali bajariladi
+D) Bu boshqa funksiya orqali bajariladi
+Javob: B
+
+38. Fayl tizimining vazifasi nima?
+A) Qo‘shimcha parametr orqali bajariladi
+B) Sozlama menyusi orqali bajariladi
+C) Ma’lumotlarni diskda tartib bilan saqlash va boshqarish.
+D) Bu boshqa funksiya orqali bajariladi
+Javob: C
+
+39. Google Docs dasturining vazifasi:
+A) Qo‘shimcha parametr orqali bajariladi
+B) Onlayn matn hujjatlarini yaratish va birgalikda tahrirlash.
+C) Sozlama menyusi orqali bajariladi
+D) Noto‘g‘ri tanlov orqali bajariladi
+Javob: B
+
+40. Google Docs qanday turdagi fayllarni qo‘llabquvvatlaydi?
+A) .doc, .docx, .odt, .rtf, .txt, .pdf, .xls va boshqalar.
+B) Bu boshqa funksiya orqali bajariladi
+C) Sozlama menyusi orqali bajariladi
+D) Noto‘g‘ri tanlov orqali bajariladi
+Javob: A
+
+41. Google Docs qayerda ishlaydi?
+A) Bu boshqa funksiya orqali bajariladi
+B) Internet va brauzer orqali (cloud’da).
+C) Qo‘shimcha parametr orqali bajariladi
+D) Sozlama menyusi orqali bajariladi
+Javob: B
+
+42. Google Drive nima?
+A) Qo‘shimcha parametr orqali bajariladi
+B) Google’ning bulutli saqlash xizmati.
+C) Bu boshqa funksiya orqali bajariladi
+D) Sozlama menyusi orqali bajariladi
+Javob: B
+
+43. Google Drive qanday xizmat turi?
+A) Sozlama menyusi orqali bajariladi
+B) Noto‘g‘ri tanlov orqali bajariladi
+C) Bu boshqa funksiya orqali bajariladi
+D) SaaS (Software as a Service) va IaaS (Infrastructure as a Service).
+Javob: D
+
+44. Google Drive’da faylni boshqalar bilan qanday ulash mumkin?
+A) Noto‘g‘ri tanlov orqali bajariladi
+B) Fayl ustiga o‘ng tugma → Share, link orqali.
+C) Sozlama menyusi orqali bajariladi
+D) Bu boshqa funksiya orqali bajariladi
+Javob: B
+
+45. Google Drive’da faylni o‘chirish uchun nima qilinadi?
+A) Qo‘shimcha parametr orqali bajariladi
+B) Bu boshqa funksiya orqali bajariladi
+C) Sozlama menyusi orqali bajariladi
+D) Faylni tanlab Delete yoki Trash’ga ko‘chiriladi.
+Javob: D
+
+46. Google hisobiga ega bo‘lish uchun nima kerak?
+A) Sozlama menyusi orqali bajariladi
+B) Gmail manzili yoki mavjud email bilan hisob ochish.
+C) Qo‘shimcha parametr orqali bajariladi
+D) Bu boshqa funksiya orqali bajariladi
+Javob: B
+
+47. GPU (Graphics Processing Unit) ning vazifasi nima?
+A) Sozlama menyusi orqali bajariladi
+B) Bu boshqa funksiya orqali bajariladi
+C) Grafikalarni grafik kartaga ishlash va vizual tasvirni yaratish.
+D) Noto‘g‘ri tanlov orqali bajariladi
+Javob: C
+
+48. Hujjatni qanday saqlash mumkin?
+A) Bu boshqa funksiya orqali bajariladi
+B) Ctrl + S yoki menyuda “Save” opsiyasini tanlash orqali.
+C) Qo‘shimcha parametr orqali bajariladi
+D) Noto‘g‘ri tanlov orqali bajariladi
+Javob: B
+
+49. HyperThreading (Simultaneous Multithreading) texnologiyasi nima uchun mo‘ljallangan?
+A) Noto‘g‘ri tanlov orqali bajariladi
+B) Sozlama menyusi orqali bajariladi
+C) Qo‘shimcha parametr orqali bajariladi
+D) CPU ichida bir nechta threadlarni bir vaqtda ishlashini ta’minlash.
+Javob: D
+
+50. IaaS va PaaS farqi nimada?
+A) Qo‘shimcha parametr orqali bajariladi
+B) Sozlama menyusi orqali bajariladi
+C) Bu boshqa funksiya orqali bajariladi
+D) IaaS – infratuzilmani (server, saqlash) beradi; PaaS – dastur platformasini, joylashtirish va rivojlantirish muhiti.
+Javob: D
+
+51. IF funksiyasi nima qiladi?
+A) Qo‘shimcha parametr orqali bajariladi
+B) Shartga ko‘ra farqli natijalar qaytaradi (misol: =IF(A1>0,”Musbat”,”Manfiy”)).
+C) Noto‘g‘ri tanlov orqali bajariladi
+D) Bu boshqa funksiya orqali bajariladi
+Javob: B
+
+52. INDEX va MATCH funksiyalari qachon ishlatiladi?
+A) Sozlama menyusi orqali bajariladi
+B) Noto‘g‘ri tanlov orqali bajariladi
+C) Qo‘shimcha parametr orqali bajariladi
+D) Jadval ichida mos qiymat qidirish va chiqarish uchun (VLOOKUP alternativi sifatida).
+Javob: D
+
+53. Internet nima?
+A) Bu boshqa funksiya orqali bajariladi
+B) Global kompyuter tarmog‘i bo‘lib, ma’lumot almashuv imkonini beradi.
+C) Noto‘g‘ri tanlov orqali bajariladi
+D) Qo‘shimcha parametr orqali bajariladi
+Javob: B
+
+54. Internet orqali fayllarni saqlashning asosiy afzalligi:
+A) Qo‘shimcha parametr orqali bajariladi
+B) Sozlama menyusi orqali bajariladi
+C) Istalgan joydan va qurilmadan kirish mumkin.
+D) Noto‘g‘ri tanlov orqali bajariladi
+Javob: C
+
+55. Interrupt (uzilish) nima vazifa bajaradi?
+A) Sozlama menyusi orqali bajariladi
+B) CPU operatsiyasini to‘xtatib, ustuvor vazifani bajarish signalini beradi.
+C) Qo‘shimcha parametr orqali bajariladi
+D) Noto‘g‘ri tanlov orqali bajariladi
+Javob: B
+
+56. Kernel nima?
+A) Qo‘shimcha parametr orqali bajariladi
+B) Noto‘g‘ri tanlov orqali bajariladi
+C) Operatsion tizimning yadro qismi bo‘lib, apparat resurslarini boshqaradi.
+D) Sozlama menyusi orqali bajariladi
+Javob: C
+
+57. Kompyuterning asosiy qismlaridan biri bu:
+A) Bu boshqa funksiya orqali bajariladi
+B) Noto‘g‘ri tanlov orqali bajariladi
+C) Qo‘shimcha parametr orqali bajariladi
+D) CPU, RAM, disk, ona plata, GPU, PSU.
+Javob: D
+
+58. Kursorni harakatlantirish uchun qaysi qurilma ishlatiladi?
+A) Sozlama menyusi orqali bajariladi
+B) Qo‘shimcha parametr orqali bajariladi
+C) Bu boshqa funksiya orqali bajariladi
+D) Sichqoncha yoki klaviaturaning strelka tugmalari.
+Javob: D
+
+59. L1 cache qayerda joylashgan?
+A) Sozlama menyusi orqali bajariladi
+B) To‘g‘ridan to‘g‘ri CPU ichida joylashadi.
+C) Qo‘shimcha parametr orqali bajariladi
+D) Bu boshqa funksiya orqali bajariladi
+Javob: B
+
+60. Makroslar (Macros) nima vazifani bajaradi?
+A) Sozlama menyusi orqali bajariladi
+B) Takrorlanuvchi vazifalarni yozib olib, bir klikda bajaradi.
+C) Noto‘g‘ri tanlov orqali bajariladi
+D) Bu boshqa funksiya orqali bajariladi
+Javob: B
+
+61. Microsoft Word dasturi nima uchun ishlatiladi?
+A) Sozlama menyusi orqali bajariladi
+B) Qo‘shimcha parametr orqali bajariladi
+C) Noto‘g‘ri tanlov orqali bajariladi
+D) Matnli hujjatlarni yaratish, tahrirlash va formatlash uchun.
+Javob: D
+
+62. Modem vazifasi nima?
+A) Bu boshqa funksiya orqali bajariladi
+B) Raqamli signalni analogga aylantirib internetga ulanishni ta’minlaydi.
+C) Noto‘g‘ri tanlov orqali bajariladi
+D) Qo‘shimcha parametr orqali bajariladi
+Javob: B
+
+63. Monitor nima uchun ishlatiladi?
+A) Vizual ma’lumotni ekranga chiqarish uchun.
+B) Qo‘shimcha parametr orqali bajariladi
+C) Noto‘g‘ri tanlov orqali bajariladi
+D) Bu boshqa funksiya orqali bajariladi
+Javob: A
+
+64. Motherboard (ona plata) nima vazifani bajaradi?
+A) Bu boshqa funksiya orqali bajariladi
+B) Kompyuter komponentlarini ulash va ularning o‘rtasida aloqa taminlash uchun.
+C) Sozlama menyusi orqali bajariladi
+D) Noto‘g‘ri tanlov orqali bajariladi
+Javob: B
+
+65. MS Word dasturida asosan nima bilan ishlanadi?
+A) Noto‘g‘ri tanlov orqali bajariladi
+B) Qo‘shimcha parametr orqali bajariladi
+C) Matn tahrirlash, formatlash, sahifalash.
+D) Bu boshqa funksiya orqali bajariladi
+Javob: C
+
+66. MS Wordda sahifa raqamini qayerdan kiritiladi?
+A) Insert → Page Number menyusidan.
+B) Noto‘g‘ri tanlov orqali bajariladi
+C) Bu boshqa funksiya orqali bajariladi
+D) Sozlama menyusi orqali bajariladi
+Javob: A
+
+67. Multidasturlash tizimi nimani anglatadi?
+A) Bu boshqa funksiya orqali bajariladi
+B) Noto‘g‘ri tanlov orqali bajariladi
+C) Bir vaqtning o‘zida bir nechta dasturlarni bajarish imkonini beradi.
+D) Qo‘shimcha parametr orqali bajariladi
+Javob: C
+
+68. Named Range nima?
+A) Noto‘g‘ri tanlov orqali bajariladi
+B) Excelda bir yoki bir nechta katakka nom berish imkoniyati.
+C) Sozlama menyusi orqali bajariladi
+D) Qo‘shimcha parametr orqali bajariladi
+Javob: B
+
+69. Narration funksiyasi nima vazifa bajaradi?
+A) PowerPoint’da ovozli izohlar qo‘shish uchun.
+B) Sozlama menyusi orqali bajariladi
+C) Qo‘shimcha parametr orqali bajariladi
+D) Bu boshqa funksiya orqali bajariladi
+Javob: A
+
+70. Operatsion tizim misoli:
+A) Sozlama menyusi orqali bajariladi
+B) Windows, macOS, Linux.
+C) Bu boshqa funksiya orqali bajariladi
+D) Qo‘shimcha parametr orqali bajariladi
+Javob: B
+
+71. Operatsion tizim nima uchun kerak?
+A) Foydalanuvchi va apparat o‘rtasidagi vositachi sifatida ishlaydi.
+B) Sozlama menyusi orqali bajariladi
+C) Noto‘g‘ri tanlov orqali bajariladi
+D) Bu boshqa funksiya orqali bajariladi
+Javob: A
+
+72. Operatsion tizim nima?
+A) Kompyuter resurslarini boshqaruvchi dasturiy ta’minot.
+B) Bu boshqa funksiya orqali bajariladi
+C) Noto‘g‘ri tanlov orqali bajariladi
+D) Qo‘shimcha parametr orqali bajariladi
+Javob: A
+
+73. Operatsion tizimlar turlariga misol keltiring.
+A) Bu boshqa funksiya orqali bajariladi
+B) Qo‘shimcha parametr orqali bajariladi
+C) Noto‘g‘ri tanlov orqali bajariladi
+D) Desktop (Windows), Server (Windows Server), Mobil (Android/iOS), Real-Time (RTOS).
+Javob: D
+
+74. Operatsion tizimning asosiy vazifalaridan biri nima?
+A) Resurslarni (CPU, xotira, disk, tarmoq) boshqarish.
+B) Qo‘shimcha parametr orqali bajariladi
+C) Noto‘g‘ri tanlov orqali bajariladi
+D) Bu boshqa funksiya orqali bajariladi
+Javob: A
+
+75. PCI Express x16 sloti qancha PCIe kanal (lane) bilan ishlaydi?
+A) Qo‘shimcha parametr orqali bajariladi
+B) 16 ta lane bilan.
+C) Noto‘g‘ri tanlov orqali bajariladi
+D) Sozlama menyusi orqali bajariladi
+Javob: B
+
+76. Pivot Table nima uchun ishlatiladi?
+A) Katta hajmdagi ma’lumotni tahlil qilish va ko‘rgazmali hisobot berish uchun.
+B) Qo‘shimcha parametr orqali bajariladi
+C) Bu boshqa funksiya orqali bajariladi
+D) Sozlama menyusi orqali bajariladi
+Javob: A
+
+77. PowerPoint dasturi nima uchun ishlatiladi?
+A) Qo‘shimcha parametr orqali bajariladi
+B) Bu boshqa funksiya orqali bajariladi
+C) Noto‘g‘ri tanlov orqali bajariladi
+D) Vizual imkoniyatli taqdimotlar yaratish uchun.
+Javob: D
+
+78. PowerPoint dasturining asosiy vazifasi nima?
+A) Qo‘shimcha parametr orqali bajariladi
+B) Bu boshqa funksiya orqali bajariladi
+C) Slaydlar orqali kontentni taqdim etish va vizual tarzda ko‘rsatish.
+D) Noto‘g‘ri tanlov orqali bajariladi
+Javob: C
+
+79. PowerPoint fayllarining kengaytmasi nima?
+A) .pptx
+B) Noto‘g‘ri tanlov orqali bajariladi
+C) Qo‘shimcha parametr orqali bajariladi
+D) Bu boshqa funksiya orqali bajariladi
+Javob: A
+
+80. PowerPointda animatsiya nima uchun kerak?
+A) Elementlarga harakat berish va slaydni jonlantirish uchun.
+B) Qo‘shimcha parametr orqali bajariladi
+C) Bu boshqa funksiya orqali bajariladi
+D) Sozlama menyusi orqali bajariladi
+Javob: A
+
+81. PowerPointda hyperlink qanday qo‘shiladi?
+A) Sozlama menyusi orqali bajariladi
+B) Bu boshqa funksiya orqali bajariladi
+C) Qo‘shimcha parametr orqali bajariladi
+D) Insert → Link menyusidan.
+Javob: D
+
+82. PowerPointda rasmni slaydga qanday qo‘shiladi?
+A) Qo‘shimcha parametr orqali bajariladi
+B) Insert → Picture menyusidan.
+C) Noto‘g‘ri tanlov orqali bajariladi
+D) Bu boshqa funksiya orqali bajariladi
+Javob: B
+
+83. PowerPointda slaydlar orasida avtomatik o‘tish qayerda sozlanadi?
+A) Bu boshqa funksiya orqali bajariladi
+B) Transitions menyusida.
+C) Sozlama menyusi orqali bajariladi
+D) Qo‘shimcha parametr orqali bajariladi
+Javob: B
+
+84. PowerPointdagi har bir sahifa nima deb ataladi?
+A) Bu boshqa funksiya orqali bajariladi
+B) Noto‘g‘ri tanlov orqali bajariladi
+C) Qo‘shimcha parametr orqali bajariladi
+D) Slayd.
+Javob: D
+
+85. Printer qaysi turga kiradi?
+A) Noto‘g‘ri tanlov orqali bajariladi
+B) Qo‘shimcha parametr orqali bajariladi
+C) Chiqish (output) qurilmasi.
+D) Bu boshqa funksiya orqali bajariladi
+Javob: C
+
+86. PSU (Power Supply Unit) qaysi vazifani bajaradi?
+A) Kompyuterni elektr bilan ta’minlaydi, kuchlanmalarni uyg‘unlaydi.
+B) Qo‘shimcha parametr orqali bajariladi
+C) Sozlama menyusi orqali bajariladi
+D) Bu boshqa funksiya orqali bajariladi
+Javob: A
+
+87. Qanday funksiyalar asosiy matematik hisob-kitoblar uchun ishlatiladi?
+A) Qo‘shimcha parametr orqali bajariladi
+B) +, -, *, /, SUM, AVERAGE, MIN, MAX.
+C) Sozlama menyusi orqali bajariladi
+D) Noto‘g‘ri tanlov orqali bajariladi
+Javob: B
+
+88. Qanday qilib hujjatni parol bilan himoyalash mumkin?
+A) Word’da File → Protect Document → Encrypt with Password.
+B) Bu boshqa funksiya orqali bajariladi
+C) Qo‘shimcha parametr orqali bajariladi
+D) Sozlama menyusi orqali bajariladi
+Javob: A
+
+89. Qanday tugma yordamida taqdimotni ishga tushirish mumkin?
+A) Qo‘shimcha parametr orqali bajariladi
+B) Sozlama menyusi orqali bajariladi
+C) Noto‘g‘ri tanlov orqali bajariladi
+D) F5 tugmasi.
+Javob: D
+
+90. Qattiq disk nima vazifani bajaradi?
+A) Noto‘g‘ri tanlov orqali bajariladi
+B) Sozlama menyusi orqali bajariladi
+C) Doimiy ravishda ma’lumot saqlash.
+D) Bu boshqa funksiya orqali bajariladi
+Javob: C
+
+91. Qaysi menyuda ‘Bold’, ‘Italic’, ‘Underline’ opsiyalari mavjud?
+A) Home menyusining Font guruhida.
+B) Sozlama menyusi orqali bajariladi
+C) Noto‘g‘ri tanlov orqali bajariladi
+D) Qo‘shimcha parametr orqali bajariladi
+Javob: A
+
+92. Qaysi menyuda slayd dizayni tanlanadi?
+A) Qo‘shimcha parametr orqali bajariladi
+B) Bu boshqa funksiya orqali bajariladi
+C) Design menyusida.
+D) Sozlama menyusi orqali bajariladi
+Javob: C
+
+93. Qaysi menyudan grafikka kirmoq mumkin?
+A) Sozlama menyusi orqali bajariladi
+B) Bu boshqa funksiya orqali bajariladi
+C) Insert → Chart menyusidan.
+D) Qo‘shimcha parametr orqali bajariladi
+Javob: C
+
+94. Qaysi protokol veb sahifalarni yuklash uchun ishlatiladi?
+A) Qo‘shimcha parametr orqali bajariladi
+B) HTTP yoki HTTPS.
+C) Sozlama menyusi orqali bajariladi
+D) Bu boshqa funksiya orqali bajariladi
+Javob: B
+
+95. Quyidagilardan qaysi biri kiritish qurilmasi?
+A) Klaviatura, sichqoncha, skaner.
+B) Qo‘shimcha parametr orqali bajariladi
+C) Sozlama menyusi orqali bajariladi
+D) Noto‘g‘ri tanlov orqali bajariladi
+Javob: A
+
+96. Quyidagilardan qaysi biri operatsion tizim hisoblanadi?
+A) Sozlama menyusi orqali bajariladi
+B) Noto‘g‘ri tanlov orqali bajariladi
+C) Windows, Linux, macOS.
+D) Qo‘shimcha parametr orqali bajariladi
+Javob: C
+
+97. Quyidagi qurilmalarning qaysi biri yordamida Internetga ulanish mumkin?
+A) Modem, router, mobil modem, Wi-Fi adapter.
+B) Bu boshqa funksiya orqali bajariladi
+C) Noto‘g‘ri tanlov orqali bajariladi
+D) Qo‘shimcha parametr orqali bajariladi
+Javob: A
+
+98. Real-time OS qanday tizim?
+A) Noto‘g‘ri tanlov orqali bajariladi
+B) Vaqt jihatdan sezgir va tez javob berishi kerak bo‘lgan tizim (masalan: avtomobil boshqaruv).
+C) Qo‘shimcha parametr orqali bajariladi
+D) Sozlama menyusi orqali bajariladi
+Javob: B
+
+99. Sahifa raqamini qanday qo‘shish mumkin?
+A) Word’da Insert → Page Number opsiyasidan.
+B) Noto‘g‘ri tanlov orqali bajariladi
+C) Qo‘shimcha parametr orqali bajariladi
+D) Sozlama menyusi orqali bajariladi
+Javob: A
+
+100. Sichqoncha qaysi qurilmalar toifasiga kiradi?
+A) Sozlama menyusi orqali bajariladi
+B) Qo‘shimcha parametr orqali bajariladi
+C) Noto‘g‘ri tanlov orqali bajariladi
+D) Kiritish (input) qurilmalariga.
+Javob: D
+
+101. Skanner nima?
+A) Sozlama menyusi orqali bajariladi
+B) Bu boshqa funksiya orqali bajariladi
+C) Qog‘oz hujjat yoki suratni raqamli formatga aylantiruvchi qurilma.
+D) Qo‘shimcha parametr orqali bajariladi
+Javob: C
+
+102. Slaydga matn qanday qo‘shiladi?
+A) Qo‘shimcha parametr orqali bajariladi
+B) Insert → Text Box yordamida.
+C) Noto‘g‘ri tanlov orqali bajariladi
+D) Bu boshqa funksiya orqali bajariladi
+Javob: B
+
+103. Slide Master nima uchun kerak?
+A) Noto‘g‘ri tanlov orqali bajariladi
+B) Bu boshqa funksiya orqali bajariladi
+C) Sozlama menyusi orqali bajariladi
+D) PowerPoint’da slayd shablonlari va umumiy dizaynni boshqarish uchun.
+Javob: D
+
+104. SSD (Solid State Drive) qaysi asosiy xususiyatga ega?
+A) Sozlama menyusi orqali bajariladi
+B) Qo‘shimcha parametr orqali bajariladi
+C) Mexanik qismsiz, tezkor, kam shovqinli va bardoshli.
+D) Noto‘g‘ri tanlov orqali bajariladi
+Javob: C
+
+105. Transition nima vazifa bajaradi?
+A) Slaydlar orasidagi o‘tish effektlarini boshqaradi.
+B) Sozlama menyusi orqali bajariladi
+C) Bu boshqa funksiya orqali bajariladi
+D) Noto‘g‘ri tanlov orqali bajariladi
+Javob: A
+
+106. URL nima?
+A) Internetdagi resurslarning yagona manzili.
+B) Bu boshqa funksiya orqali bajariladi
+C) Qo‘shimcha parametr orqali bajariladi
+D) Noto‘g‘ri tanlov orqali bajariladi
+Javob: A
+
+107. USB 3.0 standarti maksimal qanday ma’lumot uzatish tezligini ta’minlaydi?
+A) Sozlama menyusi orqali bajariladi
+B) Noto‘g‘ri tanlov orqali bajariladi
+C) 5 Gbps.
+D) Qo‘shimcha parametr orqali bajariladi
+Javob: C
+
+108. Veb-brauzer vazifasi nima?
+A) Qo‘shimcha parametr orqali bajariladi
+B) Bu boshqa funksiya orqali bajariladi
+C) Internet sahifalarini yuklash, ko‘rsatish va foydalanuvchi bilan o‘zaro ishlash imkonini beradi.
+D) Noto‘g‘ri tanlov orqali bajariladi
+Javob: C
+
+109. Virtual xotira nima?
+A) Bu boshqa funksiya orqali bajariladi
+B) Sozlama menyusi orqali bajariladi
+C) Operatsion tizim tomonidan RAM va diskni birlashtirib ko‘rish.
+D) Noto‘g‘ri tanlov orqali bajariladi
+Javob: C
+
+110. VLOOKUP funksiyasi nima uchun ishlatiladi?
+A) Bu boshqa funksiya orqali bajariladi
+B) Noto‘g‘ri tanlov orqali bajariladi
+C) Qo‘shimcha parametr orqali bajariladi
+D) Vertikal qidiruv operatsiyasini bajarib, mos qiymatni chiqaradi.
+Javob: D
+
+111. VPN texnologiyasi qanday maqsadda ishlatiladi?
+A) Qo‘shimcha parametr orqali bajariladi
+B) Internet orqali xavfsiz va shifrlangan uzatishni ta’minlash.
+C) Bu boshqa funksiya orqali bajariladi
+D) Sozlama menyusi orqali bajariladi
+Javob: B
+
+112. WiFi nima?
+A) Bu boshqa funksiya orqali bajariladi
+B) Simsiz lokal tarmoq texnologiyasi.
+C) Noto‘g‘ri tanlov orqali bajariladi
+D) Qo‘shimcha parametr orqali bajariladi
+Javob: B
+
+113. Word dasturida yangi hujjat qanday yaratiladi?
+A) Qo‘shimcha parametr orqali bajariladi
+B) Bu boshqa funksiya orqali bajariladi
+C) Sozlama menyusi orqali bajariladi
+D) File → New menyusidan.
+Javob: D
+
+114. Word faylining kengaytmasi qanday bo‘ladi?
+A) Qo‘shimcha parametr orqali bajariladi
+B) Noto‘g‘ri tanlov orqali bajariladi
+C) Sozlama menyusi orqali bajariladi
+D) .docx
+Javob: D
+
+115. Word hujjatini qanday chop etiladi?
+A) Bu boshqa funksiya orqali bajariladi
+B) Sozlama menyusi orqali bajariladi
+C) Noto‘g‘ri tanlov orqali bajariladi
+D) File → Print menyusidan.
+Javob: D
+
+116. Wordda ‘Header’ va ‘Footer’ nima?
+A) Sahifadagi yuqori va pastki bezak (matn/raqam) maydonlari.
+B) Sozlama menyusi orqali bajariladi
+C) Noto‘g‘ri tanlov orqali bajariladi
+D) Bu boshqa funksiya orqali bajariladi
+Javob: A
+
+117. Wordda ‘Track Changes’ funksiyasi nimani anglatadi?
+A) Sozlama menyusi orqali bajariladi
+B) Bu boshqa funksiya orqali bajariladi
+C) Hujjatdagi tahrirlarni kuzatib borish.
+D) Noto‘g‘ri tanlov orqali bajariladi
+Javob: C
+
+118. Wordda fayl kengaytmasi qanday?
+A) Noto‘g‘ri tanlov orqali bajariladi
+B) Bu boshqa funksiya orqali bajariladi
+C) .docx
+D) Sozlama menyusi orqali bajariladi
+Javob: C
+
+119. Wordda havolani (Hyperlink) qanday qo‘shiladi?
+A) Bu boshqa funksiya orqali bajariladi
+B) Qo‘shimcha parametr orqali bajariladi
+C) Insert → Link yordamida.
+D) Noto‘g‘ri tanlov orqali bajariladi
+Javob: C
+
+120. Wordda hujjatga rasmni qanday qo‘shiladi?
+A) Insert → Picture menyusidan.
+B) Qo‘shimcha parametr orqali bajariladi
+C) Sozlama menyusi orqali bajariladi
+D) Noto‘g‘ri tanlov orqali bajariladi
+Javob: A
+
+121. Wordda jadval (table) qanday qo‘shiladi?
+A) Insert → Table menyusidan.
+B) Bu boshqa funksiya orqali bajariladi
+C) Qo‘shimcha parametr orqali bajariladi
+D) Noto‘g‘ri tanlov orqali bajariladi
+Javob: A
+
+122. Wordda matnga avtomatik raqamlash qayerdan beriladi?
+A) Qo‘shimcha parametr orqali bajariladi
+B) Bu boshqa funksiya orqali bajariladi
+C) Noto‘g‘ri tanlov orqali bajariladi
+D) Home menyusida Numbering tugmasi bilan.
+Javob: D
+
+123. Wordda matnni ikki ustunga qanday ajratish mumkin?
+A) Noto‘g‘ri tanlov orqali bajariladi
+B) Layout → Columns → Two tanlanadi.
+C) Bu boshqa funksiya orqali bajariladi
+D) Qo‘shimcha parametr orqali bajariladi
+Javob: B
+
+124. Wordda matnni qalin qilish uchun qaysi tugma ishlatiladi?
+A) Bu boshqa funksiya orqali bajariladi
+B) Sozlama menyusi orqali bajariladi
+C) Qo‘shimcha parametr orqali bajariladi
+D) Ctrl + B
+Javob: D
+
+125. Wordda shakllar (Shapes) bilan ishlash imkoniyati qayerda?
+A) Insert → Shapes menyusida.
+B) Bu boshqa funksiya orqali bajariladi
+C) Qo‘shimcha parametr orqali bajariladi
+D) Noto‘g‘ri tanlov orqali bajariladi
+Javob: A
+
+126. Wordda shrift (font) o‘lchami qayerdan sozlanadi?
+A) Sozlama menyusi orqali bajariladi
+B) Bu boshqa funksiya orqali bajariladi
+C) Noto‘g‘ri tanlov orqali bajariladi
+D) Home menyusidagi Font size qutisidan.
+Javob: D
+
+127. YouTube qanday platforma?
+A) Bu boshqa funksiya orqali bajariladi
+B) Videolarni tomosha qilish, yuklash, baham ko‘rishga mo‘ljallangan onlayn xizmat.
+C) Qo‘shimcha parametr orqali bajariladi
+D) Sozlama menyusi orqali bajariladi
+Javob: B
+
