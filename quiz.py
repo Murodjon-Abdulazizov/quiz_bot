@@ -75,7 +75,9 @@ async def handle_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
 
     count = int(data)
-    all_questions = parse_txt_to_json("questions.txt")
+    all_questions = parse_txt_to_json("questions_nursing.txt") 
+    parse_txt_to_json("questions_akt.txt") 
+
     if not all_questions:
         await query.message.reply_text("❗ Fayl bo‘sh yoki noto‘g‘ri formatda.")
         return
