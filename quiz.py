@@ -16,7 +16,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Token
+# Token yuklash
 load_dotenv()
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 if not BOT_TOKEN:
@@ -25,7 +25,7 @@ if not BOT_TOKEN:
 user_data = {}
 poll_timeout_tasks = {}
 
-# 1. Savollarni yuklash
+# Savollarni yuklash
 def parse_txt_to_json(txt_path):
     questions = []
     try:
@@ -58,11 +58,16 @@ def parse_txt_to_json(txt_path):
         logger.error(f"Xatolik: {e}")
     return questions
 
-# 2. /start — 30/40/50 tanlovini ko‘rsatish
+# /start buyrug‘i
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await show_test_options(update.effective_chat.id, context)
+    keyboard = [
+        [InlineKeyboardButton("🩺 Hamshiralik ishi", callback_data='nursing')],
+        [InlineKeyboardButton("💻 AKT", callback_data='akt')]
+    ]
+    markup = InlineKeyboardMarkup(keyboard)
+    await update.message.reply_text("Fanni tanlang:", reply_markup=markup)
 
-# 3. Tugma bosilganda
+# Fanni yoki savol sonini tanlash
 async def handle_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
@@ -71,37 +76,50 @@ async def handle_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
     data = query.data
 
     if data == 'restart':
-        await show_test_options(chat_id, context)
+        await start(update, context)
         return
 
-    count = int(data)
-    all_questions = parse_txt_to_json("questions_nursing.txt") 
-    parse_txt_to_json("questions_akt.txt") 
-
-    if not all_questions:
-        await query.message.reply_text("❗ Fayl bo‘sh yoki noto‘g‘ri formatda.")
+    if data == 'nursing':
+        keyboard = [
+            [InlineKeyboardButton("30 ta savol", callback_data='nursing_30')],
+            [InlineKeyboardButton("40 ta savol", callback_data='nursing_40')],
+            [InlineKeyboardButton("50 ta savol", callback_data='nursing_50')]
+        ]
+        markup = InlineKeyboardMarkup(keyboard)
+        await query.message.reply_text("📋 Savollar sonini tanlang:", reply_markup=markup)
         return
 
-    selected_questions = random.sample(all_questions, min(count, len(all_questions)))
-    user_data[user_id] = {
-        "index": 0,
-        "correct": 0,
-        "questions": selected_questions
-    }
-    await query.message.reply_text(f"✅ {len(selected_questions)} ta savol boshlangan! Har bir savol uchun 45 soniya vaqt bor.")
-    await send_poll(chat_id, context, user_id)
+    if data == 'akt':
+        all_questions = parse_txt_to_json("questions_akt.txt")
+        if not all_questions:
+            await query.message.reply_text("❗ AKT savollari topilmadi.")
+            return
+        selected = random.sample(all_questions, min(20, len(all_questions)))
+        user_data[user_id] = {
+            "index": 0,
+            "correct": 0,
+            "questions": selected
+        }
+        await query.message.reply_text("✅ AKT fanidan 20 ta test boshlandi!")
+        await send_poll(chat_id, context, user_id)
+        return
 
-# 4. Tanlash tugmalari — 30/40/50
-async def show_test_options(chat_id, context):
-    keyboard = [
-        [InlineKeyboardButton("30 ta savol", callback_data='30')],
-        [InlineKeyboardButton("40 ta savol", callback_data='40')],
-        [InlineKeyboardButton("50 ta savol", callback_data='50')]
-    ]
-    markup = InlineKeyboardMarkup(keyboard)
-    await context.bot.send_message(chat_id, "📋 Nechta savol ishlamoqchisiz?", reply_markup=markup)
+    if data.startswith("nursing_"):
+        count = int(data.split("_")[1])
+        all_questions = parse_txt_to_json("questions_nursing.txt")
+        if not all_questions:
+            await query.message.reply_text("❗ Hamshiralik savollari topilmadi.")
+            return
+        selected = random.sample(all_questions, min(count, len(all_questions)))
+        user_data[user_id] = {
+            "index": 0,
+            "correct": 0,
+            "questions": selected
+        }
+        await query.message.reply_text(f"✅ {count} ta test boshlandi!")
+        await send_poll(chat_id, context, user_id)
 
-# 5. Poll yuborish
+# Savolni yuborish
 async def send_poll(chat_id, context: ContextTypes.DEFAULT_TYPE, user_id):
     state = user_data[user_id]
     index = state["index"]
@@ -134,7 +152,7 @@ async def send_poll(chat_id, context: ContextTypes.DEFAULT_TYPE, user_id):
         )
         del user_data[user_id]
 
-# 6. 45 soniya ichida javob bo‘lmasa
+# 45 soniya o'tsa, javob bermasa
 async def timeout_next_poll(chat_id, context, user_id, poll_id):
     await asyncio.sleep(45)
     if user_id in user_data:
@@ -148,7 +166,7 @@ async def timeout_next_poll(chat_id, context, user_id, poll_id):
             await asyncio.sleep(1)
             await send_poll(chat_id, context, user_id)
 
-# 7. Pollga javob kelsa
+# Pollga javob berganda
 async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE):
     poll_id = update.poll_answer.poll_id
     user_id = context.bot_data.get(poll_id)
@@ -169,7 +187,7 @@ async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE)
         chat_id = update.poll_answer.user.id
         await send_poll(chat_id, context, user_id)
 
-# 8. Botni ishga tushurish
+# Botni ishga tushurish
 if __name__ == "__main__":
     try:
         app = ApplicationBuilder().token(BOT_TOKEN).build()
@@ -179,7 +197,7 @@ if __name__ == "__main__":
         logger.info("Bot ishga tushmoqda...")
 
         port = int(os.getenv("PORT", 8443))
-        webhook_url = os.getenv("WEBHOOK_URL", "https://your-bot-url.com/webhook")  # ← O'zingizning webhook URL’ingiz
+        webhook_url = os.getenv("WEBHOOK_URL", "https://your-bot-url.com/webhook")  # ← o‘zingizning webhook URL
 
         app.run_webhook(
             listen="0.0.0.0",
