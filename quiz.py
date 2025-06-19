@@ -9,7 +9,7 @@ from telegram.ext import (
     PollAnswerHandler, CallbackQueryHandler
 )
 
-# Logging
+# Logging sozlash
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
@@ -58,14 +58,14 @@ def parse_txt_to_json(txt_path):
         logger.error(f"Xatolik: {e}")
     return questions
 
-# /start buyrug‘i
+# /start komanda
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = [
         [InlineKeyboardButton("🩺 Hamshiralik ishi", callback_data='nursing')],
         [InlineKeyboardButton("💻 AKT", callback_data='akt')]
     ]
     markup = InlineKeyboardMarkup(keyboard)
-    await update.message.reply_text("Fanni tanlang:", reply_markup=markup)
+    await context.bot.send_message(update.effective_chat.id, "Fanni tanlang:", reply_markup=markup)
 
 # Fanni yoki savol sonini tanlash
 async def handle_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -119,7 +119,7 @@ async def handle_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await query.message.reply_text(f"✅ {count} ta test boshlandi!")
         await send_poll(chat_id, context, user_id)
 
-# Savolni yuborish
+# Savol yuborish
 async def send_poll(chat_id, context: ContextTypes.DEFAULT_TYPE, user_id):
     state = user_data[user_id]
     index = state["index"]
@@ -152,7 +152,7 @@ async def send_poll(chat_id, context: ContextTypes.DEFAULT_TYPE, user_id):
         )
         del user_data[user_id]
 
-# 45 soniya o'tsa, javob bermasa
+# 45 soniya kutish va avtomatik o'tish
 async def timeout_next_poll(chat_id, context, user_id, poll_id):
     await asyncio.sleep(45)
     if user_id in user_data:
@@ -166,7 +166,7 @@ async def timeout_next_poll(chat_id, context, user_id, poll_id):
             await asyncio.sleep(1)
             await send_poll(chat_id, context, user_id)
 
-# Pollga javob berganda
+# Pollga javob
 async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE):
     poll_id = update.poll_answer.poll_id
     user_id = context.bot_data.get(poll_id)
@@ -187,7 +187,7 @@ async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE)
         chat_id = update.poll_answer.user.id
         await send_poll(chat_id, context, user_id)
 
-# Botni ishga tushurish
+# Botni ishga tushirish
 if __name__ == "__main__":
     try:
         app = ApplicationBuilder().token(BOT_TOKEN).build()
