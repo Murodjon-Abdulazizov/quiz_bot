@@ -58,7 +58,7 @@ def parse_txt_to_json(txt_path):
         logger.error(f"Xatolik: {e}")
     return questions
 
-# /start komanda
+# /start komandasi
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = [
         [InlineKeyboardButton("🩺 Hamshiralik ishi", callback_data='nursing')],
@@ -110,7 +110,8 @@ async def handle_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
         if not all_questions:
             await query.message.reply_text("❗ To‘g‘rilangan javoblar savollari topilmadi.")
             return
-        selected = random.sample(all_questions, min(20, len(all_questions)))
+        random.shuffle(all_questions)
+        selected = all_questions[:20]
         user_data[user_id] = {
             "index": 0,
             "correct": 0,
@@ -199,7 +200,7 @@ async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE)
         if update.poll_answer.option_ids and update.poll_answer.option_ids[0] == correct_id:
             state["correct"] += 1
         state["index"] += 1
-        await asyncio.sleep(1.0)
+        await asyncio.sleep(1.5)  # ✅ Keyingi savolga 1.5 soniyadan keyin o‘tadi
         chat_id = update.poll_answer.user.id
         await send_poll(chat_id, context, user_id)
 
@@ -212,7 +213,7 @@ if __name__ == "__main__":
         app.add_handler(PollAnswerHandler(handle_poll_answer))
         logger.info("Bot ishga tushmoqda...")
 
-        port = int(os.environ.get("PORT"))  # ✅ To‘g‘rilangan qism
+        port = int(os.getenv("PORT", 8443))
         webhook_url = os.getenv("WEBHOOK_URL", "https://your-bot-url.com/webhook")
 
         app.run_webhook(
