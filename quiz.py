@@ -10,24 +10,24 @@ from telegram.ext import (
     PollAnswerHandler, CallbackQueryHandler
 )
 
-# === Logging sozlash ===
+# === Logging ===
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger(__name__)
 
-# === Muhit o'zgaruvchilarni yuklash ===
+# === Env sozlash ===
 load_dotenv()
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 WEBHOOK_URL = os.getenv("WEBHOOK_URL", "https://your-bot-url.com/webhook")
 PORT = int(os.getenv("PORT", 8443))
-ADMIN_ID = int(os.getenv("ADMIN_ID", "123456789"))  # Bu yerga o'zingizning Telegram ID'ingizni .env orqali yuboring
+ADMIN_ID = int(os.getenv("ADMIN_ID", "123456789"))
 
 if not BOT_TOKEN:
     raise RuntimeError("BOT_TOKEN topilmadi.")
 
-# === Fayl nomi va user ruxsat boshqaruvi ===
+# === Foydalanuvchi ruxsatlarini boshqarish ===
 ALLOWED_FILE = "allowed_users.json"
 
 def load_allowed_users():
@@ -54,7 +54,7 @@ def remove_allowed_user(user_id):
 user_data = {}
 poll_timeout_tasks = {}
 
-# === Savollarni fayldan yuklash ===
+# === Savollarni yuklash ===
 def parse_txt_to_json(txt_path):
     questions = []
     try:
@@ -107,15 +107,9 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
 
     # Ruxsat berilgan foydalanuvchiga menyu ko‘rsatish
-    keyboard = [
-        [InlineKeyboardButton("🩺 Hamshiralik ishi", callback_data='nursing')],
-        [InlineKeyboardButton("💻 AKT", callback_data='akt')],
-        [InlineKeyboardButton("📚 To‘g‘rilangan javoblar", callback_data='corrected')]
-    ]
-    markup = InlineKeyboardMarkup(keyboard)
-    await context.bot.send_message(update.effective_chat.id, "Fanni tanlang:", reply_markup=markup)
+    await show_main_menu(update.effective_chat.id, context)
 
-# === Ruxsat tugmalari ishlovchisi ===
+# === Ruxsat bergandan so‘ng: Testni boshlash tugmasi ===
 async def handle_admin_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
@@ -128,11 +122,30 @@ async def handle_admin_callback(update: Update, context: ContextTypes.DEFAULT_TY
         user_id = int(data.split("_")[1])
         add_allowed_user(user_id)
         await query.edit_message_text(f"✅ {user_id} ga ruxsat berildi.")
-        await context.bot.send_message(chat_id=user_id, text="✅ Sizga botdan foydalanishga ruxsat berildi!")
+
+        # Testni boshlash tugmasi bilan yuborish
+        keyboard = [[InlineKeyboardButton("🟢 Testni boshlash", callback_data='show_menu')]]
+        markup = InlineKeyboardMarkup(keyboard)
+        await context.bot.send_message(
+            chat_id=user_id,
+            text="✅ Sizga botdan foydalanishga ruxsat berildi!",
+            reply_markup=markup
+        )
+
     elif data.startswith("deny_"):
         user_id = int(data.split("_")[1])
         await query.edit_message_text(f"❌ {user_id} rad etildi.")
         await context.bot.send_message(chat_id=user_id, text="❌ Sizga ruxsat berilmadi.")
+
+# === Testni boshlash va fan menyusini ko‘rsatish ===
+async def show_main_menu(chat_id, context):
+    keyboard = [
+        [InlineKeyboardButton("🩺 Hamshiralik ishi", callback_data='nursing')],
+        [InlineKeyboardButton("💻 AKT", callback_data='akt')],
+        [InlineKeyboardButton("📚 To‘g‘rilangan javoblar", callback_data='corrected')]
+    ]
+    markup = InlineKeyboardMarkup(keyboard)
+    await context.bot.send_message(chat_id, "Fanni tanlang:", reply_markup=markup)
 
 # === /kick komandasi ===
 async def kick(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -150,7 +163,7 @@ async def kick(update: Update, context: ContextTypes.DEFAULT_TYPE):
     except:
         await update.message.reply_text("❌ Xatolik yuz berdi.")
 
-# === Fan tanlash va test boshlash ===
+# === Fanni tanlash yoki tugmalarni boshqarish ===
 async def handle_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
@@ -163,8 +176,8 @@ async def handle_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await query.message.reply_text("⛔ Sizga ruxsat berilmagan.")
         return
 
-    if data == 'restart':
-        await start(update, context)
+    if data == 'restart' or data == 'show_menu':
+        await show_main_menu(chat_id, context)
         return
 
     if data == 'nursing':
@@ -173,8 +186,7 @@ async def handle_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
             [InlineKeyboardButton("40 ta savol", callback_data='nursing_40')],
             [InlineKeyboardButton("50 ta savol", callback_data='nursing_50')]
         ]
-        markup = InlineKeyboardMarkup(keyboard)
-        await query.message.reply_text("📋 Savollar sonini tanlang:", reply_markup=markup)
+        await query.message.reply_text("📋 Savollar sonini tanlang:", reply_markup=InlineKeyboardMarkup(keyboard))
         return
 
     if data == 'akt':
@@ -235,15 +247,14 @@ async def send_poll(chat_id, context, user_id):
         percent = int((correct / total) * 100)
         mark = 5 if percent >= 86 else 4 if percent >= 71 else 3 if percent >= 50 else 2
         keyboard = [[InlineKeyboardButton("🔁 Yana test ishlash", callback_data='restart')]]
-        markup = InlineKeyboardMarkup(keyboard)
         await context.bot.send_message(
             chat_id=chat_id,
             text=f"📊 Test yakunlandi!\n✅ To‘g‘ri javoblar: {correct}/{total}\n📈 Foiz: {percent}%\n📌 Baho: {mark}",
-            reply_markup=markup
+            reply_markup=InlineKeyboardMarkup(keyboard)
         )
         del user_data[user_id]
 
-# === Pollga 45s dan keyin avtomatik o'tish ===
+# === Avtomatik o'tish ===
 async def timeout_next_poll(chat_id, context, user_id, poll_id):
     await asyncio.sleep(45)
     if user_id in user_data:
@@ -256,7 +267,7 @@ async def timeout_next_poll(chat_id, context, user_id, poll_id):
             await asyncio.sleep(1)
             await send_poll(chat_id, context, user_id)
 
-# === Pollga javobni qabul qilish ===
+# === Poll javobi ===
 async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE):
     poll_id = update.poll_answer.poll_id
     user_id = context.bot_data.get(poll_id)
