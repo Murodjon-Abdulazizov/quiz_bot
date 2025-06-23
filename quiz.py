@@ -212,7 +212,7 @@ if __name__ == "__main__":
         app.add_handler(PollAnswerHandler(handle_poll_answer))
         logger.info("Bot ishga tushmoqda...")
 
-        port = int(os.getenv("PORT", 8443))
+        port = int(os.environ.get("PORT"))  # ✅ To‘g‘rilangan qism
         webhook_url = os.getenv("WEBHOOK_URL", "https://your-bot-url.com/webhook")
 
         app.run_webhook(
