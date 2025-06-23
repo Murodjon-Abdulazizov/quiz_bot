@@ -2,6 +2,7 @@ import os
 import logging
 import asyncio
 import random
+import json
 from dotenv import load_dotenv
 from telegram import Update, Poll, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import (
@@ -9,23 +10,51 @@ from telegram.ext import (
     PollAnswerHandler, CallbackQueryHandler
 )
 
-# Logging sozlash
+# === Logging sozlash ===
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger(__name__)
 
-# Token yuklash
+# === Muhit o'zgaruvchilarni yuklash ===
 load_dotenv()
 BOT_TOKEN = os.getenv("BOT_TOKEN")
+WEBHOOK_URL = os.getenv("WEBHOOK_URL", "https://your-bot-url.com/webhook")
+PORT = int(os.getenv("PORT", 8443))
+ADMIN_ID = int(os.getenv("ADMIN_ID", "123456789"))  # Bu yerga o'zingizning Telegram ID'ingizni .env orqali yuboring
+
 if not BOT_TOKEN:
     raise RuntimeError("BOT_TOKEN topilmadi.")
+
+# === Fayl nomi va user ruxsat boshqaruvi ===
+ALLOWED_FILE = "allowed_users.json"
+
+def load_allowed_users():
+    try:
+        with open(ALLOWED_FILE, 'r') as f:
+            return set(json.load(f))
+    except:
+        return set()
+
+def save_allowed_users(users):
+    with open(ALLOWED_FILE, 'w') as f:
+        json.dump(list(users), f)
+
+def add_allowed_user(user_id):
+    users = load_allowed_users()
+    users.add(user_id)
+    save_allowed_users(users)
+
+def remove_allowed_user(user_id):
+    users = load_allowed_users()
+    users.discard(user_id)
+    save_allowed_users(users)
 
 user_data = {}
 poll_timeout_tasks = {}
 
-# Savollarni yuklash
+# === Savollarni fayldan yuklash ===
 def parse_txt_to_json(txt_path):
     questions = []
     try:
@@ -58,8 +87,26 @@ def parse_txt_to_json(txt_path):
         logger.error(f"Xatolik: {e}")
     return questions
 
-# /start komandasi
+# === /start komandasi ===
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    user = update.effective_user
+    user_id = user.id
+    allowed_users = load_allowed_users()
+
+    if user_id not in allowed_users:
+        keyboard = [
+            [
+                InlineKeyboardButton("✅ Ruxsat berish", callback_data=f"allow_{user_id}"),
+                InlineKeyboardButton("❌ Rad etish", callback_data=f"deny_{user_id}")
+            ]
+        ]
+        markup = InlineKeyboardMarkup(keyboard)
+        text = f"🆕 Yangi foydalanuvchi:\n👤 {user.full_name}\n🆔 `{user_id}`"
+        await context.bot.send_message(chat_id=ADMIN_ID, text=text, reply_markup=markup, parse_mode="Markdown")
+        await update.message.reply_text("⏳ Ruxsat so‘rovi yuborildi. Iltimos, kuting.")
+        return
+
+    # Ruxsat berilgan foydalanuvchiga menyu ko‘rsatish
     keyboard = [
         [InlineKeyboardButton("🩺 Hamshiralik ishi", callback_data='nursing')],
         [InlineKeyboardButton("💻 AKT", callback_data='akt')],
@@ -68,13 +115,53 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     markup = InlineKeyboardMarkup(keyboard)
     await context.bot.send_message(update.effective_chat.id, "Fanni tanlang:", reply_markup=markup)
 
-# Fanni yoki savol sonini tanlash
+# === Ruxsat tugmalari ishlovchisi ===
+async def handle_admin_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    if update.effective_user.id != ADMIN_ID:
+        await query.message.reply_text("⛔ Siz bu amalni bajara olmaysiz.")
+        return
+
+    data = query.data
+    if data.startswith("allow_"):
+        user_id = int(data.split("_")[1])
+        add_allowed_user(user_id)
+        await query.edit_message_text(f"✅ {user_id} ga ruxsat berildi.")
+        await context.bot.send_message(chat_id=user_id, text="✅ Sizga botdan foydalanishga ruxsat berildi!")
+    elif data.startswith("deny_"):
+        user_id = int(data.split("_")[1])
+        await query.edit_message_text(f"❌ {user_id} rad etildi.")
+        await context.bot.send_message(chat_id=user_id, text="❌ Sizga ruxsat berilmadi.")
+
+# === /kick komandasi ===
+async def kick(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if update.effective_user.id != ADMIN_ID:
+        await update.message.reply_text("⛔ Siz bu buyruqni bajara olmaysiz.")
+        return
+    if len(context.args) != 1:
+        await update.message.reply_text("❗ Foydalanuvchi ID si kerak: /kick <id>")
+        return
+    try:
+        user_id = int(context.args[0])
+        remove_allowed_user(user_id)
+        await update.message.reply_text(f"🚫 {user_id} botdan chiqarildi.")
+        await context.bot.send_message(chat_id=user_id, text="🚫 Sizning ruxsatingiz olib tashlandi.")
+    except:
+        await update.message.reply_text("❌ Xatolik yuz berdi.")
+
+# === Fan tanlash va test boshlash ===
 async def handle_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
     user_id = str(query.from_user.id)
     chat_id = query.message.chat_id
     data = query.data
+
+    allowed_users = load_allowed_users()
+    if int(user_id) not in allowed_users:
+        await query.message.reply_text("⛔ Sizga ruxsat berilmagan.")
+        return
 
     if data == 'restart':
         await start(update, context)
@@ -96,11 +183,7 @@ async def handle_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await query.message.reply_text("❗ AKT savollari topilmadi.")
             return
         selected = random.sample(all_questions, min(20, len(all_questions)))
-        user_data[user_id] = {
-            "index": 0,
-            "correct": 0,
-            "questions": selected
-        }
+        user_data[user_id] = {"index": 0, "correct": 0, "questions": selected}
         await query.message.reply_text("✅ AKT fanidan 20 ta test boshlandi!")
         await send_poll(chat_id, context, user_id)
         return
@@ -108,15 +191,10 @@ async def handle_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if data == 'corrected':
         all_questions = parse_txt_to_json("questions_corrected.txt")
         if not all_questions:
-            await query.message.reply_text("❗ To‘g‘rilangan javoblar savollari topilmadi.")
+            await query.message.reply_text("❗ To‘g‘rilangan javoblar topilmadi.")
             return
-        random.shuffle(all_questions)
         selected = all_questions[:20]
-        user_data[user_id] = {
-            "index": 0,
-            "correct": 0,
-            "questions": selected
-        }
+        user_data[user_id] = {"index": 0, "correct": 0, "questions": selected}
         await query.message.reply_text("✅ To‘g‘rilangan javoblardan 20 ta test boshlandi!")
         await send_poll(chat_id, context, user_id)
         return
@@ -128,16 +206,12 @@ async def handle_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await query.message.reply_text("❗ Hamshiralik savollari topilmadi.")
             return
         selected = random.sample(all_questions, min(count, len(all_questions)))
-        user_data[user_id] = {
-            "index": 0,
-            "correct": 0,
-            "questions": selected
-        }
+        user_data[user_id] = {"index": 0, "correct": 0, "questions": selected}
         await query.message.reply_text(f"✅ {count} ta test boshlandi!")
         await send_poll(chat_id, context, user_id)
 
-# Savol yuborish
-async def send_poll(chat_id, context: ContextTypes.DEFAULT_TYPE, user_id):
+# === Poll yuborish ===
+async def send_poll(chat_id, context, user_id):
     state = user_data[user_id]
     index = state["index"]
     questions = state["questions"]
@@ -169,7 +243,7 @@ async def send_poll(chat_id, context: ContextTypes.DEFAULT_TYPE, user_id):
         )
         del user_data[user_id]
 
-# 45 soniya kutish va avtomatik o'tish
+# === Pollga 45s dan keyin avtomatik o'tish ===
 async def timeout_next_poll(chat_id, context, user_id, poll_id):
     await asyncio.sleep(45)
     if user_id in user_data:
@@ -177,13 +251,12 @@ async def timeout_next_poll(chat_id, context, user_id, poll_id):
         index = state["index"]
         questions = state["questions"]
         if index < len(questions):
-            question_text = questions[index]["question"]
-            await context.bot.send_message(chat_id, f"⏱ 45 soniya o'tdi.\n❌ \"{question_text}\" savoliga javob berilmadi.")
+            await context.bot.send_message(chat_id, f"⏱ 45 soniya o'tdi.\n❌ \"{questions[index]['question']}\" savoliga javob berilmadi.")
             state["index"] += 1
             await asyncio.sleep(1)
             await send_poll(chat_id, context, user_id)
 
-# Pollga javob
+# === Pollga javobni qabul qilish ===
 async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE):
     poll_id = update.poll_answer.poll_id
     user_id = context.bot_data.get(poll_id)
@@ -200,26 +273,25 @@ async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE)
         if update.poll_answer.option_ids and update.poll_answer.option_ids[0] == correct_id:
             state["correct"] += 1
         state["index"] += 1
-        await asyncio.sleep(1.5)  # ✅ Keyingi savolga 1.5 soniyadan keyin o‘tadi
+        await asyncio.sleep(1.5)
         chat_id = update.poll_answer.user.id
         await send_poll(chat_id, context, user_id)
 
-# Botni ishga tushirish
+# === Botni ishga tushirish ===
 if __name__ == "__main__":
     try:
         app = ApplicationBuilder().token(BOT_TOKEN).build()
         app.add_handler(CommandHandler("start", start))
+        app.add_handler(CommandHandler("kick", kick))
+        app.add_handler(CallbackQueryHandler(handle_admin_callback, pattern="^(allow_|deny_)"))
         app.add_handler(CallbackQueryHandler(handle_selection))
         app.add_handler(PollAnswerHandler(handle_poll_answer))
         logger.info("Bot ishga tushmoqda...")
 
-        port = int(os.getenv("PORT", 8443))
-        webhook_url = os.getenv("WEBHOOK_URL", "https://your-bot-url.com/webhook")
-
         app.run_webhook(
             listen="0.0.0.0",
-            port=port,
-            webhook_url=webhook_url,
+            port=PORT,
+            webhook_url=WEBHOOK_URL,
             url_path="/webhook"
         )
     except Exception as e:
