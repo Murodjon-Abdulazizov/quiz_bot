@@ -62,7 +62,8 @@ def parse_txt_to_json(txt_path):
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = [
         [InlineKeyboardButton("🩺 Hamshiralik ishi", callback_data='nursing')],
-        [InlineKeyboardButton("💻 AKT", callback_data='akt')]
+        [InlineKeyboardButton("💻 AKT", callback_data='akt')],
+        [InlineKeyboardButton("📚 To‘g‘rilangan javoblar", callback_data='corrected')]
     ]
     markup = InlineKeyboardMarkup(keyboard)
     await context.bot.send_message(update.effective_chat.id, "Fanni tanlang:", reply_markup=markup)
@@ -101,6 +102,21 @@ async def handle_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "questions": selected
         }
         await query.message.reply_text("✅ AKT fanidan 20 ta test boshlandi!")
+        await send_poll(chat_id, context, user_id)
+        return
+
+    if data == 'corrected':
+        all_questions = parse_txt_to_json("questions_corrected.txt")
+        if not all_questions:
+            await query.message.reply_text("❗ To‘g‘rilangan javoblar savollari topilmadi.")
+            return
+        selected = random.sample(all_questions, min(20, len(all_questions)))
+        user_data[user_id] = {
+            "index": 0,
+            "correct": 0,
+            "questions": selected
+        }
+        await query.message.reply_text("✅ To‘g‘rilangan javoblardan 20 ta test boshlandi!")
         await send_poll(chat_id, context, user_id)
         return
 
@@ -197,7 +213,7 @@ if __name__ == "__main__":
         logger.info("Bot ishga tushmoqda...")
 
         port = int(os.getenv("PORT", 8443))
-        webhook_url = os.getenv("WEBHOOK_URL", "https://your-bot-url.com/webhook")  # ← o‘zingizning webhook URL
+        webhook_url = os.getenv("WEBHOOK_URL", "https://your-bot-url.com/webhook")
 
         app.run_webhook(
             listen="0.0.0.0",

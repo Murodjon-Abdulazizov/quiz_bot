@@ -402,7 +402,7 @@ A) Shishasimon
 B) Zangsimon
 C) Ko`pikli
 D) Qon aralash
-Javob: A
+Javob: B
 
 59.	O’zbekistonda qizil hoj va qizil yarim oy jamiyati qachon tashkil etilgan?
 A) 1925
@@ -444,7 +444,7 @@ A) Bemorlarga o’z-ozini parvarish qilishni targ’ib qilgan
 B) Birinchi bo’lib, ayollar uchun kasbiy faoliyatlarni belgilab qo’ygan.
 C) Dispanser nazoratiga olish salomatlik uchun muhim ro’l o’ynashini aniqladi.
 D) Hamshiralikning birinchi maktabiga asos solib, o’zidan keyin ko’pgina ilmiy ishlar qoldirgan
-Javob: A
+Javob: D
 
 65.	Hamshiralik ishining obyekti bu?
 A) Inson
@@ -493,7 +493,7 @@ A) Salomatlik -bu organizmning jismoniy rejadagi eng yaxshi holatidir
 B) Salomatlik -bu organizmning ruhiy rejadagi eng yaxshi holatidir
 C) Salomatlik -bu organizmning ijtimoiy rejadagi eng yaxshi holatidir
 D) Barcha javob to’gri
-Javob: A
+Javob: D
 
 72.	Kasallik bu ….?
 A) Organizmda muayyan simptomlar bn birga kechadigan patologik uzgarishlarni ta’siflovchi holat
@@ -549,7 +549,7 @@ A) Oilaviy poliklinikalar
 B) Sog’lomlashtirish sanatoriylari
 C) Ona va bola skrining markazlari
 D) Madaniy va ma’rifiy markazlar
-Javob: A
+Javob: D
 
 80.	Poliklinika hamshirasining vazifalari?
 A) Bemorlar ko'rigida shifokorga yordam berish, tibbiy hujjatlarni tayyorlash va yuritish
@@ -703,7 +703,7 @@ A) Maxsus nurlar yordamida zararsizlantiriladi
 B) Sistemalar qirqiladi, xlor 0,5 % li dez moddada zararsizlantiriladi
 C) Gipoxlorid kalsiyga solinadi va olinib 20 daqiqada qaynatiladi
 D) 10 daqiqa xloraminga solib zararsizlantiriladi
-Javob: A
+Javob: B
 
 102.	Muolajadan oldin va keyin tibbiyot hodimlar qo’lga qanday ishlov beradi.
 A) Fizik va kimyoviy usullarni qo’llagan holda qo’llar yuviladi
@@ -752,7 +752,7 @@ A) Barcha muolajalar tugagandan so’ng kvars lampasini yoqib
 B) Kundalik, yakuniy,batamom
 C) Umumiy yigishtirib tozalash
 D) Oldindan yigishtirib tozalash
-Javob: A
+Javob: B
 
 109.	Qo’llarni yuvish usuli to’g’ri ko’rsatilgan qatorni toping:
 A) Lavrensiy
@@ -885,21 +885,21 @@ A) Bronxografiya;
 B) Tomografiya;
 C) Bronxoskopiya;
 D) Flyurografiya.
-Javob: A
+Javob: C
 
 128.	O`pka auskultatsiyasida normada qanday nafas eshitilmaydi?
 A) Xirillash, krepitatsiya;
 B) Bronxial nafas;
 C) Vezikulyar nafas;
 D) Bronxo-vezikulyar nafas.
-Javob: A
+Javob: D
 
 129.	Yurak astmasi xurujida bemor ko’pincha qanday holatda bo’ladi?
 A) Qorniga oyog’ini tortgan holatda;
 B) Majburiy(ortopnoe) holatda;
 C) Chalqancha yostiqsiz yotgan holatda;
 D) Yuztuban yotgan holatda.
-Javob: A
+Javob: B
 
 130.	Bo’g’ilish kuchayishi, ko’p miqdorda pushtirang ko’piksimon balg’am ajralishi, tomir urishi tezlashib, ipsimon bo’lib qolishi qaysi holat belgilari hisoblanadi?
 A) O’pka shishi;
@@ -1018,14 +1018,14 @@ A) ertalab;
 B) yarim tunda;
 C) kechqurun;
 D) kun davomida.
-Javob: A
+Javob: D
 
 147.	Zахm kаsаlligini nima qo’zg’аtadi?
 A) rаngsiz spirохеtаlаr;
 B) gоnоkоkk;
 C) virus;
 D) stаfilоkоkk.
-Javob: A
+Javob: B
 
 148.	Nima uchun yangi olingan siydik namunalari oftob, shuningdek, fluoressentlovchi nurlar ta’siridan ehtiyot qilinadi?
 A) bilirubin tez oksidlanib, biliverdinga aylanadi;
@@ -1060,7 +1060,7 @@ A) Grekcha “poli”- ko’p, “klinik”- daolash san'ati
 B) Yunoncha “poli”- ko’p, “klinik”- daolash san'ati
 C) Inglizcha “poli” kam “kinika” tashxislash
 D) Grekcha o’z- o’ziga xizmat ko’rsatuvchi muassasa
-Javob: A
+Javob: B
 
 153.	Ambulator poliklinika turlari:
 A) Korxona qoshidagi tibbiy sanitariya qismi
@@ -1081,7 +1081,7 @@ A) Shoshilinch tez tibbiy yordam qismlari
 B) Davlat sanitariya - epidemiologiya nazorati (respublika, viloyat, shahar, tuman) markazlari
 C) Sanatoriya tipidagi davolash muassasalari
 D) Davolash profilaktika shifoxonalari
-Javob: A
+Javob: B
 
 156.	Kasallik tarixini passport qismi kim tomonidan to’ldiriladi?
 A) Tibbiyot hamshirasi
@@ -1193,7 +1193,7 @@ A) Sterillash to’xtatiladi
 B) Sterillik tekshiriladi,qayta qilinadi
 C) Sterillanmagan asboblar bo’limga qaytariladi
 D) Asbob uskunalar utilizatsiya qilinadi
-Javob: A
+Javob: B
 
 172.	Qo’lqoplarning turlari:
 A) Steril va nosteril
@@ -1375,7 +1375,7 @@ A) Auskultatsiya;
 B) Bemorni so’rab surishtirish;
 C) Ko’zdan kechirish;
 D) Palpatsiya.
-Javob: A
+Javob: B
 
 198.	Gipertoniya kasalligi asorati :
 A) Insult, miokard infarkti;
@@ -1396,7 +1396,7 @@ A) Glasko shkalasi;
 B) Breyden va Norton shkalasi;
 C) Riva-Rochchi shkalasi;
 D) Apgar shkalasi.
-Javob: A
+Javob: B
 
 201.	Haroratning o’zgarishiga qarab istmaning quyidagi turlari farqlanadi:
 A) Doimiy yuqori isitma, remittirlovchi isitma , almashib turadigan isitma, to’lqinsimon isitma, tinkani quritadigan istma, noodatiy isitma
@@ -1466,7 +1466,7 @@ A) Qaltirash, sovuq qotish , etning uvishishi
 B) O’rtiqcha qizib ketishlik
 C) Yo’tal
 D) Teriga toshmani toshishi
-Javob: A
+Javob: C
 
 211.	Puls defitsiti nima?
 A) Bu sistolik va diastolik bosim orasidagi farq
@@ -1599,7 +1599,7 @@ A) Siydik xоsil bo’lishi vа аjrаlish jаrаyoni
 B) Bir sutkаdа аjrаlgаn siydik miqdоri.
 C) Sutkаlik siydik miqdоrini ko’pаyishi.
 D) Sutkаlik siydik miqdоrini kаmаyishi.
-Javob: A
+Javob: B
 
 230.	Ichakdan qon ketishiga xos belgi:
 A) Qoramoysimon
@@ -1725,7 +1725,7 @@ A) Aspiratsiya
 B) Obstrusiya
 C) Asfeksiya
 D) Intoksikatsiya
-Javob: A
+Javob: C
 
 248.	Siydik qopini katetrlash nima maqsadda o’tkaziladi?
 A) Siydik chiqarish, qovuqni yuvish va dori yubarish
@@ -1837,7 +1837,7 @@ A) Dоkа, pаxtа, mumqоg’оz
 B) Pаxtа, mumqоg’оz, dоkа.
 C) Dоkа, mumqоg’оz, pаxtа.
 D) Mumqоg’оz, dоkа, pаxtа.
-Javob: A
+Javob: C
 
 264.	Isitgichdаn nimа mаqsаddа fоydаlаnilаdi?
 A) Tаnаni isitish, qon aylanishini yaxshilash uchun
@@ -1977,7 +1977,7 @@ A) Pоtеn аppаrаti.
 B) Dаrsеnvаl аppаrаtidаn.
 C) Brоnhоfibrоskоpiya.
 D) Fibrоgаstrоskоpdаn.
-Javob: A
+Javob: C
 
 284.	Plеvrа ishqаlаnish tоvushi kuzаtilаdi:
 A) Quruq plеvritdа.
@@ -1998,7 +1998,7 @@ A) O’pkа surunkаli kаsаlliklаri.
 B) Chаng vа kimyoviy birikmаlаrni nаfаs yo’llаrigа tаesiri.
 C) Zаrаrli оdаtlаr – chеkish.
 D) Оrgаnizmning himоya kuchlаrini susаyishi.
-Javob: A
+Javob: D
 
 287.	BSST tоmоnidаn tаvsiya qilingаn аrtеriаl bоsim:
 A) Sistоlik 110 – 140 mm. s/u, diаstоlik 60 – 90 mm. s/u.
@@ -2026,7 +2026,7 @@ A) Аtrоpin sulfаt.
 B) Prоmеdоl.
 C) Bаrаlgin.
 D) Mоrfin.
-Javob: A
+Javob: C
 
 291.	Miоkаrd infаrkti o’tkir dаvridа bеmоr yotоq rеjimgа:
 A) Qаtiy riоya qilishi shаrt.
@@ -2047,7 +2047,7 @@ A) Оch qоringа vа tungi оg’riqlаr.
 B) Оvqаtlаngаndаn 30 minut o’tgаch.
 C) Оvqаtlаngаndаn 1 sоаt o’tgаch.
 D) Bеmоr оvqаtlаnishigа bоg’liq emаs.
-Javob: A
+Javob: B
 
 294.	Yarа kаsаlligi qоn kеtishi bilаn аsоrаtlаngаndа ich kеlishi:
 A) Ich qоrаmоysimоn.
@@ -2173,7 +2173,7 @@ A) III - dаrаjаsi.
 B) I - dаrаjаsi.
 C) II-dаrаjаsi.
 D) IV-dаrаjаsi.
-Javob: A
+Javob: C
 
 312.	Qаndli diаbеtdа qаndаy o’zgаrishlаr bo’lаdi?
 A) Qоndа qаnd miqdоri оrtib kеtаdi.
@@ -2215,14 +2215,14 @@ A) Gipоplаstik аnеmiya
 B) Vitаmin V12 dеfitsit аnеmiya
 C) Tеmir dеfitsit аnеmiya
 D) Gеmоlitik аnеmiya
-Javob: A
+Javob: B
 
 318.	Gеmоlitik аnеmiyani dаvоlаsh usuli:
 A) Splеnektоmiya
 B) Sitоstаtiklаr yordаmidа dаvоlаsh
 C) Gоrmоnоtеrаpiya
 D) Tеmir mоddаsini sаqlоvchi prеpаrаtlаr buyurish
-Javob: A
+Javob: D
 
 319.	Vеrlgоf kаsаlligidа qоnning ko’rinishi:
 A) Trоmbоtsitоpеniya
@@ -2250,7 +2250,7 @@ A) Bir kеchа-kunduz dаvоmidа yig’ilаdi
 B) Ertаlаb nаhоrgа
 C) Siydikning o’rtа pоrtsiyasi оlinаdi
 D) 10 sоаt mоbаynidа аjrаlgаn siydik оlinаdi
-Javob: A
+Javob: B
 
 323.	Gipоglikеmik kоmа sаbаblаri
 A) Insulin miqdоrini ko’payib ketishi
@@ -2285,7 +2285,7 @@ A) Gipоstеnuriya
 B) Gipеrstеnuriya
 C) Ishuriya
 D) Izоstеnuriya
-Javob: A
+Javob: D
 
 328.	Vеrlgоf kаsаlligidа qоndаgi o’zgаrishlаr:
 A) Trоmbоtsitоpеniya
@@ -2313,7 +2313,7 @@ A) Qоn ivuvchаnligini idоrа etish
 B) Qоn hujаyrаlаri yarаtilishidа ishtirоk etish
 C) Ekskrеtоr vаzifаsi
 D) Qоn bоsimini idоrа etish
-Javob: A
+Javob: B
 
 332.	Buyrаkning eng kichik funktsiоnаl birligi hisоblаnаdi:
 A) Nеfrоn
@@ -2341,7 +2341,7 @@ A) Minerallar-tuzlar almashinuvi
 B) Mоddаlаr аlmаshinuvi izdаn chiqishi
 C) Oqsillar muvоzаnаti buzilishi
 D) Uzоq vаqt yotоq rеjimidа bo’lish
-Javob: A
+Javob: B
 
 336.	Yurak qon tomir tizimi kasalliklarida bemorlarni o`z-o`zini parvarishlash ko`nikmalariga o`rgatish nimalardan iborat?
 A) Arterial bosimni o`lchash, simptomlarni kuzatish, ovqatlanish bo`yicha qo`llanma
@@ -2390,7 +2390,7 @@ A) Yozma muloqot
 B) So’zsiz, mimika, gavda holati
 C) So’z orqali muloqot
 D) Og’zaki muloqot
-Javob: A
+Javob: B
 
 343.	Komunikatsiya bu?
 A) Muloqot olib borish
@@ -2432,21 +2432,21 @@ A) Gipertoniya kasalligi
 B) Miokard infarkti
 C) Kardioskleroz
 D) Stenokardiya
-Javob: A
+Javob: B
 
 349.	Stenokardiya xurujida dori vositalarini yuborishning samarali usuli:
 A) Intranazal;
 B) Sublingval
 C) Mushak orasiga;
 D) Teri ostiga.
-Javob: A
+Javob: D
 
 350.	Yurak astmasi xurujida bemor ko’pincha qanday holatda bo’ladi?
 A) Qorniga oyog’ini tortgan holatda;
 B) Majburiy(ortopnoe) holatda;
 C) Chalqancha yostiqsiz yotgan holatda;
 D) Yuztuban yotgan holatda.
-Javob: A
+Javob: B
 
 351.	Yurak qisqarishi nima deyiladi?
 A) Sistola;
@@ -2460,21 +2460,21 @@ A) 5 ta;
 B) 4 ta;
 C) 6 ta;
 D) 7 ta.
-Javob: A
+Javob: C
 
 353.	Mexanik antiseptikaga nimalar kiradi?
 A) Jarohatga birlamchi xirurgik ishlov berish;
 B) Terini oshlash;
 C) Jarohatni yuvish;
 D) Shuntlash.
-Javob: A
+Javob: C
 
 354.	To`qimalarni ajratuvchilarga qaysi asbob kiradi?
 A) Pinset;
 B) Uchi uchli kornsang;
 C) Koxer qisqichi;
 D) D.Kuper qaychisi.
-Javob: A
+Javob: D
 
 355.	Qon to`xtatuvchilarga qaysi asbob kiradi?
 A) Koxer qisqichi;
@@ -2488,14 +2488,14 @@ A) O’zi;
 B) Sust;
 C) Faol;
 D) Sun’iy.
-Javob: A
+Javob: C
 
 357.	Kunlik taomnomada nonushta necha %ni tashkil etadi?
 A) 35-30%;
 B) 25-15% ;
 C) 10-15%;
 D) 30-25%.
-Javob: A
+Javob: B
 
 358.	Antropometriya tekshiruv tarkibiga nimalar kiradi?
 A) Tana vazni, bo’y uzunligi,ko’krak aylanasi,bosh aylanasi
@@ -2530,7 +2530,7 @@ A) Avtoklav jihozi
 B) Sterillash buyumini olib boradiga asbob
 C) Idishlar turadigan shkaf
 D) Bog’lov materiallari uchun shkaf
-Javob: A
+Javob: B
 
 363.	Kvinkе shishidа tеz yordаm chоrаlаrigа kirаdi:
 A) Trаxеоstоmiyani bаjаrish
@@ -2593,7 +2593,7 @@ A) Gipoklikemik koma
 B) Yurak yetishmovchiligi
 C) Lipodistrofiyalar
 D) Tana haroratini ko’tarilishi
-Javob: A
+Javob: C
 
 372.	Gipotireozda qalqonsimon bez faoliyati qanday o’zgaradi?
 A) Pasayadi
@@ -2663,7 +2663,7 @@ A) Gipoglikemiyaga
 B) Giperglikemiyaga
 C) Kaheksiyaga
 D) Oliguriyaga
-Javob: A
+Javob: B
 
 382.	Biologik allergenlarga kiradi?
 A) Viruslar, zamburug’lar, zardob, vaksina
@@ -2705,7 +2705,7 @@ A) Bradikardiya, gipotermiya, apatiya, soch to’kilishi.
 B) Taxikardiya, tez charchash, tirnoqlarni sinishi
 C) Taxikardiya, qizish, bosh og’rishi
 D) Amenoreya, mimikani yo’qligi, semirish.
-Javob: A
+Javob: C
 
 388.	Diffuz-toksik buqoq kasalligining davosi?
 A) Merkazolil
@@ -2754,7 +2754,7 @@ A) Terida toshmalar, terini kichinishi
 B) Terini kichinishi, burun, lablarning kattalashishi
 C) Yuzi ko’kargan, bo’yin venalari kengaygan
 D) Kuchli xolsizlik, hansirash, ko’ngil aynashi, hushdan ketish
-Javob: A
+Javob: B
 
 395.	Anafilaktik shokda ishlatiladi?
 A) Adrenalin
@@ -2789,7 +2789,7 @@ A) Yo’q bo’ladi
 B) Ortadi
 C) Normada
 D) Pasayadi
-Javob: A
+Javob: D
 
 400.	Poliuriya – bu …
 A) Ko’p siyish
@@ -2866,35 +2866,35 @@ A) 40 – 45
 B) 12 – 14
 C) 16 – 20
 D) 80 – 100
-Javob: A
+Javob: C
 
 411.	Nafas organlari kasalliklari simptomlari qanday?
 A) Bosh og’rig’i, A/B ko’tarilishi, ko’ngil aynishi
 B) Yo’tal, balg’am, nafas siqishi, qon tupurish, xansirash
 C) Xushdan ketish, alahsirash, bosh og’rig’i
 D) Temperaturani ko’tarilishi, yo’tal, ich ketish, ko’ngil aynishi
-Javob: A
+Javob: B
 
 412.	Bronxit deganda nimani tushunasiz?
 A) O’pkaning yallig’lanishi
 B) Bronxlarning yallig’lanishi
 C) Plevraning yallig’lanishi
 D) Bronxoektatik kasallik
-Javob: A
+Javob: B
 
 413.	Bronxit kasalligining simptomi?
 A) A/B ko’tarilishi, puls tezlashishi, nafas siqishi
 B) Yo’tal, balg’am ajralishi, ko’krak qafasida og’riq
 C) Bosh og’riq, xolsizlik, uyqu buzulishi, darmonsizlik
 D) Xolsizligi, temperatura ko’tarilishi, xushtaksimon nafas olish
-Javob: A
+Javob: B
 
 414.	Qanday muolajalar nafas sistemasi buzilgan bemorlarda ishlatiladi?
 A) Enteral dori berish, banka qo’yish, zuluk qo’yish
 B) Banka qo’yish, me’dani yuvish
 C) Garchishnik qo’yish, zondlash, bug’li ingalyatsiya qilish
 D) Garchishnik, banka, ingalyatsiya, parenteral va enteral dori vositalarini yuborish
-Javob: A
+Javob: D
 
 415.	Surunkali bronxitda bronxlar shilliq pardasida qanday o’zgarishlar bo’ladi?
 A) Shilliq qavat giperemiyasi va gipertrofiyasi
@@ -2908,35 +2908,35 @@ A) Eritrositlar, eozinofillar
 B) Kox tayoqchasi, monositlar
 C) Eozinofillar, Kurshman spirallari, Sharko-Leyden kristallari
 D) Pnevmokokklar, streptokokklar, spiroxetalar
-Javob: A
+Javob: C
 
 417.	Bronxial astma kasalligini ta’riflang?
 A) Butun bronx devori va atrofidagi to’qimasining chuqur destruktiv o’zgarishlari
 B) Bronx shilliq pardasi bronxo spazmi, gipersekretsiyasi va shishi
 C) O’pka to’qimasi va bronxlar biriktiruvchi to’qimasi o’sib ketishi
 D) Bronx shilliq qavatining giperemiyasi va gipertrofiyasi
-Javob: A
+Javob: B
 
 418.	Astmatik status nima?
 A) Bo’g’ilish xurujlari kam, yiliga 3-4 marta
 B) Xuruj yaqin soatlari va kunlar ichida bosilmaydi
 C) Xurujlar ko’proq va davomliroq, yiliga 10 marta, adrenalin eufilindan keyin bosiladi
 D) Xurujdan tashqarida yengil nafas qisib turishi
-Javob: A
+Javob: B
 
 419.	Krupoz pnevmoniyaning o’choqli pnevmoniyadan farqi?
 A) Temperatura 37, 38, 39 o C, ko’krak qafasida aniq bo’lmagan og’riqlar
 B) Shilimshiq, yiringli yo’tal, xolsizlik
 C) Bo’g’ilish, nafas chiqarish qiyinlashishi
 D) Kasallik o’tkir boshlanadi, et uvishish, t- 39 – 41o C, aksirish, yo’talish, ko’krak qafasida og’riq, xansirash, burun-labda uchuq, zangsimon balg’am
-Javob: A
+Javob: D
 
 420.	O’choqli pnevmoniya simptomlari:
 A) Kasallik birdan boshlanib qaltiraydi
 B) To’satdan bo’g’ilib bemor majburiy holatni egallaydi
 C) Darmonsizlik, ko’p terlash, quruq yo’tal so’ng balg’amli, Tem 38 -39oC, lab- burun uchlari tsianozi
 D) Ko’p terlash, xolsizlik, qon tuflash, yo’tal
-Javob: A
+Javob: C
 
 421.	Surunkali pnevmoniya sabablari:
 A) Surunkali bronxit, pnevmoskleroz, atelektaz, chala davolangan o’tkir pnevmoniya
@@ -2999,7 +2999,7 @@ A) Shifokor xulosasi
 B) Zararli odatlar natijasida kelib chiqadigan xolat
 C) Tashqi va ichki muxitning zararli ta`siri natijasida organizm hayot faoliyatining buzulishi
 D) Organism mehnat qobiliyatining butunlay yo`qolishi
-Javob: A
+Javob: C
 
 430.	Etiologiya - bu?
 A) Kasallik paydo bo`lish sabablari
@@ -3020,21 +3020,21 @@ A) Pnevmaskleroz
 B) O`pka emsizemasi
 C) O`pka gangrenasi
 D) Bronxoektotik kasallik
-Javob: A
+Javob: D
 
 433.	Bronxial astma hurujida ishlatilmaydi:
 A) Antibiotiklar
 B) Antigistanimlar
 C) Bronxolitiklar
 D) Spazmalitiklar
-Javob: A
+Javob: D
 
 434.	O`pka gangrenasi qo`zg`atuvchisi:
 A) Anaerob mikroflora
 B) Viruslar
 C) Turli hil bakterialar
 D) Stafilakokklar
-Javob: A
+Javob: C
 
 435.	Plevra punksiyasida foydalaniladi:
 A) Troakar igna
@@ -3062,7 +3062,7 @@ A) Antibiotiklar
 B) Nitratlar
 C) Gipotenzivlar
 D) Antigistominlar
-Javob: A
+Javob: C
 
 439.	Yurakning ishemik kasalliklariga kirmaydi:
 A) Stenokardiya
@@ -3076,28 +3076,28 @@ A) Morfin
 B) Promedol
 C) Baralgin
 D) Atropin sulfat
-Javob: A
+Javob: C
 
 441.	Miokard infarkti o`tkir davrida bemor yotoq rejimga:
 A) Qatiy rioya qilinishi shart
 B) Yotoq rejimi shart emas
 C) Jismoniy zo`riqish cheklanmagan
 D) O`zini yaxshi xis qilsa, yotoq rejimi shart emas
-Javob: A
+Javob: B
 
 442.	Toj tomirlarning birontasi tiqilib qolishi natijasida miokard biror pismining oziqlana olmay qolib, nekroz paydo bo`lishi qaysi kasallik uchun xos.
 A) Stenokardiya
 B) Kardioskleroz
 C) Gipertaniya kasalligi
 D) Miokard infarkti
-Javob: A
+Javob: D
 
 443.	Krupoz pnevmaniyaning ochoqli pnevmaniyadan farqi
 A) Tana t⁰ 37-38 ⁰C ko`krak qafasida aniq bo`lmagan og`riqlar
 B) Shilimshiq, yiringli yo`tal, holsizlik
 C) Bo`g`ilish, nafas chiqarish qiyinlashgan
 D) Kasallik o`tkir boshlanadi, 39-41⁰C, ko`krak qafasida og`riq, burun va lablarga uchuq toshishi, hansirash
-Javob: A
+Javob: D
 
 444.	Arterial bosimni ko’tarish mahsadida qanday dori vositalar ishlatiladi?
 A) Mezaton, kofein, kamfora
@@ -3111,7 +3111,7 @@ A) Bemor og’zidan atseton hidi kelishi
 B) Chanqash, sovuq ter bosishi
 C) Ensa sohasida qattiq og’riq
 D) Gematurya, proteinuriya.
-Javob: A
+Javob: C
 
 446.	10-parhez stoli qaysi kasalliklarda beriladi?
 A) Yurak qon-tomir kasalliklarida
@@ -3125,7 +3125,7 @@ A) Miokard infarkti
 B) Stenokardiya
 C) Gipertoniya kasalligi
 D) Revmatizm.
-Javob: A
+Javob: B
 
 448.	Stenokardiya hurujida qanday dori vositalari ishlatiladi?
 A) Nitroglitserin, validol
@@ -3139,7 +3139,7 @@ A) O’pkaning bir segmentini yalliglanishi
 B) O’pkaning butun bir bolyagining yalliglanishi
 C) O’pka to’qimasining gangrenasi
 D) O’pka to’qimasining cheklangan holda yiringlashi
-Javob: A
+Javob: D
 
 450.	O’pka abstsessining davrlari?
 A) Abstsess yorilguncha va yorilgandan keying davr
@@ -3153,77 +3153,77 @@ A) Miokard yallig’lanishi
 B) Yurak klapanlarning yetishmovchiligi
 C) Yurak toj-tomirlarida qon aylanishining buzulishi
 D) Yurak toj-tomirlarining torayishi.
-Javob: A
+Javob: C
 
 452.	Remissiya nima?
 A) Kasallik qo’zishi
 B) Kasallik belgisi
 C) Kasallik asorati
 D) Davo natijasida kasallik simptomlarini pasayishi.
-Javob: A
+Javob: D
 
 453.	O’pka abstsessi gangrenadan nima bilan farq qiladi?
 A) Patologik o’choq butun o’pkada tarqalgan
 B) Patologik o’choq aniq ajralib turadigan chegarali bo’lmaydi
 C) Patologik o’choq aniq chegarali bo’ladi
 D) Ikkala o’pka to’qimasining yalliglanishi.
-Javob: A
+Javob: C
 
 454.	Xolesterin almashinuvining buzulishi natijasida qaysi kasallik yuzaga keladi?
 A) Xoletsistit
 B) Ateroskleroz
 C) Miokardit
 D) Pankreatit.
-Javob: A
+Javob: B
 
 455.	Yurakning o’rta qavati nima deb ataladi?
 A) Endokard
 B) Miokard
 C) Perikard
 D) Serroz parda
-Javob: A
+Javob: B
 
 456.	Stenokardiya nima?
 A) Toj tomirlaridan birortasitiqilib qolishi natijasida nekroz paydo bo’lishi
 B) Yurak to’qimasida biriktiruvchi to’qimadan iborat chandiq paydo bo’lishi
 C) Yurak toj-tomirlarida qon aylanishining buzulishi
 D) Yurak toj-tomirlarining torayishi.
-Javob: A
+Javob: D
 
 457.	Buyrak tosh kasalligining rivojlanishiga olib keluvchi omillarga kirmaydi:
 A) Siydik yo’llarining tug’ma anomaliyalari;
 B) Endokrin tizim kasalliklari;
 C) Siydik ajratish va tanosil a’zolari infeksiyalari;
 D) Bronxial astma.
-Javob: A
+Javob: D
 
 458.	Siydikning “go’sht yuvindisi” rangiga kirishi tarkibida ko’p miqdorda
 A) Oqsillar;
 B) Bakteriyalar;
 C) Eritrositlar
 D) Leykositlar.
-Javob: A
+Javob: C
 
 459.	Buyrak sanchig’i boshlanishiga sabab bo’lishi mumkin:
 A) Siydik haydovchilar qabul qilish
 B) Antibiotiklar qabul qilish;
 C) Spazmolitiklar qabul qilish;
 D) Nitroglitserin qabul qilish.
-Javob: A
+Javob: B
 
 460.	Buyrak sanchig’ida samarali dori vositani ajrating:
 A) Suprastin;
 B) Ampitsillin;
 C) Baralgin
 D) Alloxol.
-Javob: A
+Javob: C
 
 461.	Buyrak tosh kasalligi qaysi asoratga olib kelishi mumkin?
 A) Kollaps;
 B) Poliuriya;
 C) Insult;
 D) Uremiya
-Javob: A
+Javob: D
 
 462.	Birlamchi siydikdagi glukoza va suvning qayta qonga so’rilishi qanday ataladi?
 A) Filtratsiya;
@@ -3237,7 +3237,7 @@ A) Oqsillar borligi bilan;
 B) Konsentratsiyasi yuqoriligi, miqdori kamligi bilan;
 C) Glukoza saqlashi bilan;
 D) Xolesterin borligi bilan.
-Javob: A
+Javob: B
 
 464.	Arterial bosimning idora etilishida buyraklarnig vazifasi:
 A) Renin ishlab chiqariladi;
@@ -3257,7 +3257,7 @@ A) Holsizlik;
 B) Bosh og’rig’i;
 C) Tutqanoqlar;
 D) Shishlar.
-Javob: A
+Javob: C
 
 467.	Sutkalik diurez 300 ml ni tashkil qilmoqda. Bu holat……..
 A) Anuriya;
@@ -3271,7 +3271,7 @@ A) Sog’lom turmush tarziga rioya qilish, har yili bitsillin profilaktik dozasi
 B) Virusli gepatit kasalligini samarali davolash va kaloriyaga boy ovqatlanish;
 C) Surunkali gepatit kasalligi aniqlanganda bemorlarni dispenser nazoratiga olish;
 D) Virusli gepatit kasalligini samarali davolash va ratsional ovqatlanish.
-Javob: A
+Javob: D
 
 469.	Surunkali gepatit kasalligini ikkilamchi profilaktikasida nimalar qilinadi?
 A) Virusli gepatit kasalligini samarali davolash va ratsional ovqatlanish;
@@ -3292,21 +3292,21 @@ A) O`t pufagidagi safro;
 B) 12 barmoqli ichakni shirasi;
 C) Umumiy o’t yo’li suyuqligi;
 D) Oshqozon shirasi.
-Javob: A
+Javob: C
 
 472.	Duodenal tekshiruvda “A” portsiyada nima aniqlanadi?
 A) O`t pufagidagi safro;
 B) 12 barmoqli ichakni shirasi;
 C) Umumiy o’t yo’li suyuqligi;
 D) Oshqozon shirasi.
-Javob: A
+Javob: B
 
 473.	Duodenal zondlash qaysi kasallikda o`tkaziladi?
 A) O’tkir xolesistitda;
 B) O`t qopini, o`t yo`llari kasalliklarida;
 C) Oshqozon va 12 barmoqli ichak yara kasalligida;
 D) Qizilo`ngach venalarini kengayishida.
-Javob: A
+Javob: B
 
 474.	Bemorda duodenal zondlash uchun qanday tayyorgarlikdan o’tkaziladi?
 A) 2-3 kun oldin baliq va go’sht mahsulotlari, ko’katlar, dori vositalari (yo’d, brom, temir saqlovchi) cheklanadi;
@@ -3320,28 +3320,28 @@ A) Oqish rangda;
 B) To’q yashil rangda;
 C) Och sariq rangda;
 D) To’q sariq rangda.
-Javob: A
+Javob: C
 
 476.	Qusayotgan bemor zaif bo’lsa qanday parvarish muhim?
 A) Bemorning boshini baland qilib qo’yiladi;
 B) Qusayotgan vaqtida boshini yon tomonga burib qo’yiladi;
 C) Bemor bilan chalg’ituvchi suhbat o’tkaziladi;
 D) Bemorni o’rnidan turg’iziladi.
-Javob: A
+Javob: B
 
 477.	Bemor qusib bo’lgach darhol qanday parvarish ko’rsatasiz?
 A) Bemor o’z holida qoldiriladi;
 B) Og’zi chaydiriladi, 2 – 3 qultum sovuq suv ichiriladi, yotqizib, o’rab qo’yiladi;
 C) Bemor ovqatlantiriladi;
 D) Bemorni arterial bosimi o’lchanadi.
-Javob: A
+Javob: B
 
 478.	Me’dani yuvish amalga oshirilishi mumkin:
 A) Sun’iy usulda;
 B) Maxsus usulda;
 C) Laborator usulda;
 D) Zondli va zondsiz usulda.
-Javob: A
+Javob: D
 
 479.	Me’dani yuvishda suv harorati qanday bo’lishi kerak?
 A) 10 - 150C;
@@ -3355,14 +3355,14 @@ A) Ovqat qoldiqlari chiqqach;
 B) Shilliq aralash suv kelgach;
 C) Suv toza bo’lib tushgach;
 D) Bemor ahvoli yaxshilangach.
-Javob: A
+Javob: C
 
 481.	Me’dasi yuvilgach bemor:
 A) 40 daqiqa yotishi kerak;
 B) 5 - 10 daqiqa yotishi kerak;
 C) Darhol turishi mumkin;
 D) Darhol ovqatlanishi mumkin.
-Javob: A
+Javob: B
 
 482.	Huqna o’tkazish uchun bemor qaysi javobda to’g’ri tayyorlangan?
 A) Bemor kushetka chetiga chap yonboshi bilan yotqizilib oyoqlari qorniga taqalgan;
@@ -3376,7 +3376,7 @@ A) Oqsilga, vitaminga boy ovqatlar;
 B) Yengil hazm bo’ladigan ovqatlar;
 C) Bug’da hamda qaynatib pishirilgan ovqatlar;
 D) Qovurma va tuzlamalar, o’tkir ziravorlar.
-Javob: A
+Javob: D
 
 484.	Qon tupurish va o’pkadan qon ketish qaysi kasalliklarda kuzatiladi?
 A) O’pka absessi;
@@ -3397,25 +3397,25 @@ A) Qon analizi;
 B) Balg’am analizi;
 C) Rentgenografiya;
 D) Spirometriya.
-Javob: A
+Javob: C
 
 487.	Qaysi nafas tizimi kasalligida bemor zararlangan tomoni bilan yotadi?
 A) Bronxit;
 B) Bronxial astma;
 C) Bronxoektatik kasalliklar;
 D) Quruq plevrit.
-Javob: A
+Javob: D
 
 488.	Yo’tal vaqtida kuchayuvchi ko’krak qafasidagi og’riq, plevra ishqalanish shovqini qaysi kasallik uchun xos?
 A) Bronxit;
 B) Bronxial astma;
 C) Quruq plevrit;
 D) Ekssudativ plevrit.
-Javob: A
+Javob: C
 
 489.	Ovoz titrashi va perkutor tovush susayishi qaysi kasallikda kuzatiladi?
 A) Bronxit;
 B) Bronxial astma;
 C) Quruq plevrit;
 D) Ekssudativ plevrit.
-Javob: A
+Javob: D
